@@ -90,7 +90,7 @@ export const TEXTS = {
       originalPrice: 18.50,
       image: '/images/books/book1.jpg',
       category: 'Romance',
-      rating: 4.6,
+      rating: 5,
       reviews: 2340,
       description: {
         en: 'A heartwarming romance set in a charming small town pancake house, where new beginnings bloom with every sunrise and love finds its way through homemade syrup and fresh starts.',
@@ -108,7 +108,7 @@ export const TEXTS = {
       originalPrice: 20.00,
       image: '/images/books/book2.jpg',
       category: 'Mystery',
-      rating: 4.4,
+      rating: 5,
       reviews: 1820,
       description: {
         en: 'A gripping noir thriller from the master of Italian crime fiction, exploring the darkest corners of human nature and the relentless pursuit of justice.',
@@ -144,7 +144,7 @@ export const TEXTS = {
       originalPrice: 21.00,
       image: '/images/books/book4.jpg',
       category: 'Travel',
-      rating: 4.6,
+      rating: 5,
       reviews: 1567,
       description: {
         en: 'A journey through Garibaldi\'s Italy, exploring the forgotten corners of the Risorgimento with Rumiz\'s masterful storytelling and keen historical insight.',
@@ -198,7 +198,7 @@ export const TEXTS = {
       originalPrice: 18.00,
       image: '/images/books/book7.jpg',
       category: 'Mystery',
-      rating: 4.3,
+      rating: 5,
       reviews: 1934,
       description: {
         en: 'A captivating mystery featuring Sara, where silence speaks louder than words and the truth hides behind unexpected facades.',
@@ -234,7 +234,7 @@ export const TEXTS = {
       originalPrice: 20.00,
       image: '/images/books/book9.jpg',
       category: 'Mystery',
-      rating: 4.4,
+      rating: 5,
       reviews: 1876,
       description: {
         en: 'A compelling mystery set in Naples, where laughter and sorrow intertwine in an unforgettable tale of human nature and justice.',
@@ -270,7 +270,7 @@ export const TEXTS = {
       originalPrice: 16.00,
       image: '/images/books/book11.jpg',
       category: 'Children',
-      rating: 4.8,
+      rating: 5,
       reviews: 3256,
       description: {
         en: 'A timeless classic about the transformative power of nature, friendship, and the magic hidden in everyday life.',
@@ -287,7 +287,7 @@ export const TEXTS = {
       id: '1',
       name: 'Marco R.',
       location: 'Milano',
-      rating: 5,
+      rating: 4.5,
       text: {
         en: 'Exceptional service and fast delivery. The books arrived in perfect condition. Elena Ferrante\'s novels are absolutely captivating!',
         it: 'Servizio eccezionale e consegna veloce. I libri sono arrivati in perfette condizioni. I romanzi di Elena Ferrante sono assolutamente coinvolgenti!'
@@ -309,7 +309,7 @@ export const TEXTS = {
       id: '3',
       name: 'Stefano L.',
       location: 'Bologna',
-      rating: 5,
+      rating: 4,
       text: {
         en: 'The bilingual edition was perfect for my Italian studies. Excellent quality books and very competitive prices.',
         it: 'L\'edizione bilingue è stata perfetta per i miei studi di italiano. Libri di ottima qualità e prezzi molto competitivi.'

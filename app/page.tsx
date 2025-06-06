@@ -346,7 +346,80 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* Customer Reviews Section */}
+            <section className="py-16 bg-white dark:bg-gray-900 transition-colors">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                            {t(TEXTS.reviews.title)}
+                        </h2>
+                        <p className="text-xl text-gray-600 dark:text-gray-300">
+                            {t(TEXTS.reviews.subtitle)}
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {TEXTS.customerReviews.map((review) => (
+                            <div key={review.id} className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700">
 
+
+                                {/* Review Text */}
+                                <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-sm">
+                                    "{t(review.text)}"
+                                </p>
+
+                                {/* Customer Info */}
+                                <div className="flex items-center justify-between">
+                                    <div>
+                                        <p className="font-semibold text-gray-900 dark:text-white text-sm">{review.name}</p>
+                                        <p className="text-xs text-gray-500 dark:text-gray-400">{review.location}</p>
+                                    </div>
+                                    <div className="text-right">
+                                        <p className="text-xs text-blue-600 dark:text-blue-400 font-medium">{review.book}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Trust Indicators */}
+                    <div className="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                            <div className="flex flex-col items-center space-y-3">
+                                <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                                    <span className="text-xl font-bold text-blue-600 dark:text-blue-400">5K+</span>
+                                </div>
+                                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 text-center">
+                                    {language === 'en' ? 'Happy Customers' : 'Clienti Soddisfatti'}
+                                </p>
+                            </div>
+                            <div className="flex flex-col items-center space-y-3">
+                                <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                                    <span className="text-xl font-bold text-green-600 dark:text-green-400">10K+</span>
+                                </div>
+                                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 text-center">
+                                    {language === 'en' ? 'Books Sold' : 'Libri Venduti'}
+                                </p>
+                            </div>
+                            <div className="flex flex-col items-center space-y-3">
+                                <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
+                                    <span className="text-xl font-bold text-purple-600 dark:text-purple-400">98%</span>
+                                </div>
+                                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 text-center">
+                                    {language === 'en' ? 'Satisfaction Rate' : 'Tasso Soddisfazione'}
+                                </p>
+                            </div>
+                            <div className="flex flex-col items-center space-y-3">
+                                <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center">
+                                    <span className="text-xl font-bold text-orange-600 dark:text-orange-400">24h</span>
+                                </div>
+                                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 text-center">
+                                    {language === 'en' ? 'Fast Shipping' : 'Spedizione Rapida'}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* Newsletter Section */}
             <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-gray-800 dark:to-gray-900 transition-colors">
