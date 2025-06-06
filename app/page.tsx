@@ -71,8 +71,8 @@ export default function Home() {
         <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
             {/* Header */}
             <header className="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800 transition-colors">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-16">
+                <div className="max-w-8xl mx-auto px-2 sm:px-4 lg:px-6">
+                    <div className="flex justify-between items-center h-16 gap-2">
                         {/* Logo */}
                         <div className="flex items-center space-x-2">
                             <Book className="h-8 w-8 text-blue-600 dark:text-blue-400" />
@@ -80,7 +80,7 @@ export default function Home() {
                         </div>
 
                         {/* Desktop Navigation */}
-                        <nav className="hidden md:flex items-center space-x-8">
+                        <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
                             <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors whitespace-nowrap">{t(TEXTS.nav.home)}</a>
                             <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors whitespace-nowrap">{t(TEXTS.nav.books)}</a>
                             <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors whitespace-nowrap">{t(TEXTS.nav.categories)}</a>
@@ -147,11 +147,11 @@ export default function Home() {
                             </div>
 
                             {/* Search */}
-                            <div className="hidden sm:block relative">
+                            <div className="hidden lg:block relative">
                                 <input
                                     type="text"
                                     placeholder={t(TEXTS.nav.search_placeholder)}
-                                    className="w-64 pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                                    className="w-48 xl:w-56 pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                                 />
                                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-gray-500" />
                             </div>
@@ -169,7 +169,7 @@ export default function Home() {
                             {/* Mobile Menu Button */}
                             <button
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className="md:hidden p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                className="lg:hidden p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                             >
                                 {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                             </button>
@@ -178,7 +178,7 @@ export default function Home() {
 
                     {/* Mobile Menu */}
                     {isMenuOpen && (
-                        <div className="md:hidden border-t border-gray-100 dark:border-gray-800 py-4">
+                        <div className="lg:hidden border-t border-gray-100 dark:border-gray-800 py-4">
                             <div className="flex flex-col space-y-3">
                                 <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">{t(TEXTS.nav.home)}</a>
                                 <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2">{t(TEXTS.nav.books)}</a>
@@ -260,34 +260,54 @@ export default function Home() {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {TEXTS.sampleBooks.slice(0, 8).map((book) => (
-                            <div key={book.id} className="bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-md dark:hover:shadow-2xl transition-shadow duration-300 overflow-hidden group">
-                                <div className="aspect-[3/4] bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 flex items-center justify-center">
-                                    <Book className="h-16 w-16 text-blue-400 dark:text-blue-300" />
+                            <div key={book.id} className="bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-md dark:hover:shadow-2xl transition-all duration-300 overflow-hidden group flex flex-col h-full">
+                                {/* Book Cover */}
+                                <div className="aspect-[3/4] bg-gray-100 dark:bg-gray-800 overflow-hidden">
+                                    <img
+                                        src={book.image}
+                                        alt={t(book.title)}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        onError={(e) => {
+                                            const target = e.target as HTMLImageElement;
+                                            target.style.display = 'none';
+                                            target.parentElement!.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 flex items-center justify-center"><svg class="h-16 w-16 text-blue-400 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"></path></svg></div>';
+                                        }}
+                                    />
                                 </div>
-                                <div className="p-6">
-                                    <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">
+
+                                {/* Book Info */}
+                                <div className="p-6 flex flex-col flex-1">
+                                    <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2 line-clamp-2 min-h-[3.5rem]">
                                         {t(book.title)}
                                     </h3>
-                                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-2">{book.author}</p>
+                                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">{book.author}</p>
 
                                     {/* Rating */}
-                                    <div className="flex items-center mb-2">
+                                    <div className="flex items-center mb-3">
                                         <div className="flex items-center">
                                             {[...Array(5)].map((_, i) => (
                                                 <Star key={i} className={`h-4 w-4 ${i < Math.floor(book.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300 dark:text-gray-600'}`} />
                                             ))}
                                         </div>
                                         <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
-                                            {book.rating} ({book.reviews} {language === 'en' ? 'reviews' : 'recensioni'})
+                                            {book.rating} ({book.reviews})
                                         </span>
                                     </div>
 
-                                    <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                                    {/* Description - flexible height */}
+                                    <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 line-clamp-3 flex-1">
                                         {t(book.description)}
                                     </p>
-                                    <div className="flex items-center justify-between">
-                                        <span className="text-xl font-bold text-blue-600 dark:text-blue-400">€{book.price}</span>
-                                        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors text-sm">
+
+                                    {/* Price and Button - always at bottom */}
+                                    <div className="flex items-center justify-between mt-auto">
+                                        <div className="flex flex-col">
+                                            <span className="text-xl font-bold text-blue-600 dark:text-blue-400">€{book.price}</span>
+                                            {book.originalPrice && (
+                                                <span className="text-sm text-gray-400 dark:text-gray-500 line-through">€{book.originalPrice}</span>
+                                            )}
+                                        </div>
+                                        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium">
                                             {language === 'en' ? 'Add to Cart' : 'Aggiungi'}
                                         </button>
                                     </div>
@@ -313,8 +333,17 @@ export default function Home() {
                         {TEXTS.featuredAuthors.map((author) => (
                             <div key={author.id} className="text-center group">
                                 <div className="relative mb-6">
-                                    <div className="w-32 h-32 mx-auto bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 rounded-full flex items-center justify-center">
-                                        <User className="h-16 w-16 text-blue-400 dark:text-blue-300" />
+                                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                        <img
+                                            src={author.image}
+                                            alt={author.name}
+                                            className="w-full h-full object-cover"
+                                            onError={(e) => {
+                                                const target = e.target as HTMLImageElement;
+                                                target.style.display = 'none';
+                                                target.parentElement!.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 flex items-center justify-center"><svg class="h-16 w-16 text-blue-400 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg></div>';
+                                            }}
+                                        />
                                     </div>
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{author.name}</h3>
