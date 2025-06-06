@@ -1,6 +1,7 @@
 # Max Publishing - Online Bookstore
 
-A modern, bilingual (English/Italian) online bookstore built with Next.js and Tailwind CSS.
+A modern, bilingual (English/Italian) online bookstore built with Next.js and
+Tailwind CSS.
 
 ## Features
 
@@ -16,7 +17,7 @@ A modern, bilingual (English/Italian) online bookstore built with Next.js and Ta
 
 ## Company Information
 
-**Max Publishing SRL**
+### Max Publishing SRL
 
 - Address: Via Camillo Benso Cavour 50/D, 20056 Bologna
 - Email: <maxpublishingsrl@pec.it>
@@ -39,19 +40,19 @@ git clone <your-repo-url>
 cd book-web
 ```
 
-2. Install dependencies
+1. Install dependencies
 
 ```bash
 npm install
 ```
 
-3. Run the development server
+1. Run the development server
 
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+1. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Deployment to Vercel
 
@@ -67,16 +68,16 @@ npm run dev
 npm run build
 ```
 
-2. The `out` folder contains the static files ready for deployment
+1. The `out` folder contains the static files ready for deployment
 
-3. Deploy to Vercel:
+1. Deploy to Vercel:
    - Connect your GitHub repository to Vercel
    - Vercel will automatically detect it's a Next.js project
    - Deploy with default settings
 
 ## Project Structure
 
-```
+```text
 book-web/
 ├── app/
 │   ├── globals.css
@@ -101,20 +102,25 @@ book-web/
 ## Languages & Themes
 
 ### Language Support
+
 The website supports two languages:
 
 - **English** (EN)
 - **Italian** (IT)
 
-Language switching is available in the header. All text content is stored in `lib/constants.ts` for easy management.
+Language switching is available in the header. All text content is stored in
+`lib/constants.ts` for easy management.
 
 ### Theme Support
+
 Three theme modes are available:
+
 - **Light mode** - Classic bright interface
 - **Dark mode** - Modern dark interface for better night reading
 - **System mode** - Automatically adapts to device preference
 
-Theme switching is available in the header next to language options. The selected theme is saved in localStorage.
+Theme switching is available in the header next to language options. The
+selected theme is saved in localStorage.
 
 ## Customization
 
