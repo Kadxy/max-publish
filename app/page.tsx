@@ -79,11 +79,27 @@ export default function Home() {
 
                         {/* Right Side */}
                         <div className="flex items-center space-x-4">
+                            {/* Language Toggle */}
+                            <div className="flex items-center space-x-1 bg-gray-100 dark:bg-gray-800 rounded-lg p-1 transition-colors">
+                                <button
+                                    onClick={() => setLanguage('en')}
+                                    className={`px-3 py-1 text-sm rounded-md transition-colors ${language === 'en' ? 'bg-blue-600 text-white shadow-sm' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-700'}`}
+                                >
+                                    EN
+                                </button>
+                                <button
+                                    onClick={() => setLanguage('it')}
+                                    className={`px-3 py-1 text-sm rounded-md transition-colors ${language === 'it' ? 'bg-blue-600 text-white shadow-sm' : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-700'}`}
+                                >
+                                    IT
+                                </button>
+                            </div>
+
                             {/* Theme Toggle */}
                             <div className="relative">
                                 <button
                                     onClick={() => setIsThemeMenuOpen(!isThemeMenuOpen)}
-                                    className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                    className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
                                     title={t(TEXTS.theme.toggle)}
                                 >
                                     {theme === 'light' && <Sun className="h-5 w-5" />}
@@ -92,46 +108,30 @@ export default function Home() {
                                 </button>
 
                                 {isThemeMenuOpen && (
-                                    <div className="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50">
+                                    <div className="absolute right-0 mt-2 w-36 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50 py-1">
                                         <button
                                             onClick={() => handleThemeChange('light')}
-                                            className="w-full px-4 py-2 text-left text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2"
+                                            className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 transition-colors ${theme === 'light' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20' : 'text-gray-700 dark:text-gray-300'}`}
                                         >
                                             <Sun className="h-4 w-4" />
                                             <span>{t(TEXTS.theme.light)}</span>
                                         </button>
                                         <button
                                             onClick={() => handleThemeChange('dark')}
-                                            className="w-full px-4 py-2 text-left text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2"
+                                            className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 transition-colors ${theme === 'dark' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20' : 'text-gray-700 dark:text-gray-300'}`}
                                         >
                                             <Moon className="h-4 w-4" />
                                             <span>{t(TEXTS.theme.dark)}</span>
                                         </button>
                                         <button
                                             onClick={() => handleThemeChange('system')}
-                                            className="w-full px-4 py-2 text-left text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2"
+                                            className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 transition-colors ${theme === 'system' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20' : 'text-gray-700 dark:text-gray-300'}`}
                                         >
                                             <Monitor className="h-4 w-4" />
                                             <span>{t(TEXTS.theme.system)}</span>
                                         </button>
                                     </div>
                                 )}
-                            </div>
-
-                            {/* Language Toggle */}
-                            <div className="flex items-center space-x-2">
-                                <button
-                                    onClick={() => setLanguage('en')}
-                                    className={`px-2 py-1 text-sm rounded transition-colors ${language === 'en' ? 'bg-blue-600 text-white' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
-                                >
-                                    EN
-                                </button>
-                                <button
-                                    onClick={() => setLanguage('it')}
-                                    className={`px-2 py-1 text-sm rounded transition-colors ${language === 'it' ? 'bg-blue-600 text-white' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
-                                >
-                                    IT
-                                </button>
                             </div>
 
                             {/* Search */}
@@ -336,7 +336,7 @@ export default function Home() {
                                     ))}
                                 </div>
                                 <p className="text-gray-700 dark:text-gray-300 mb-4 italic">
-                                    "{t(review.comment)}"
+                                    "{t(review.text)}"
                                 </p>
                                 <div className="flex items-center">
                                     <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 rounded-full flex items-center justify-center mr-3">
@@ -354,7 +354,7 @@ export default function Home() {
             </section>
 
             {/* Newsletter Section */}
-            <section className="py-16 bg-blue-600 dark:bg-blue-700 transition-colors">
+            <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-800 dark:to-blue-900 transition-colors">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl font-bold text-white mb-4">
                         {language === 'en' ? 'Stay Updated with New Releases' : 'Rimani Aggiornato con le Nuove Uscite'}
@@ -365,13 +365,13 @@ export default function Home() {
                             : 'Iscriviti alla nostra newsletter e sii il primo a sapere di nuovi libri, offerte speciali ed eventi letterari.'
                         }
                     </p>
-                    <div className="max-w-md mx-auto flex gap-4">
+                    <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
                         <input
                             type="email"
                             placeholder={language === 'en' ? 'Enter your email' : 'Inserisci la tua email'}
-                            className="flex-1 px-4 py-3 rounded-lg focus:ring-2 focus:ring-white focus:outline-none text-gray-900"
+                            className="flex-1 px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-400 focus:outline-none text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 border border-transparent transition-colors"
                         />
-                        <button className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold">
+                        <button className="bg-white dark:bg-gray-100 text-blue-600 dark:text-blue-700 px-8 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-200 transition-colors font-semibold whitespace-nowrap">
                             {language === 'en' ? 'Subscribe' : 'Iscriviti'}
                         </button>
                     </div>
