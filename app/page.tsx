@@ -19,6 +19,18 @@ export default function Home() {
         const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | 'system' || 'system'
         setTheme(savedTheme)
         applyTheme(savedTheme)
+
+        // Listen for system theme changes
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+        const handleSystemThemeChange = () => {
+            const currentTheme = localStorage.getItem('theme') || 'system'
+            if (currentTheme === 'system') {
+                applyTheme('system')
+            }
+        }
+
+        mediaQuery.addEventListener('change', handleSystemThemeChange)
+        return () => mediaQuery.removeEventListener('change', handleSystemThemeChange)
     }, [])
 
     // Close theme menu when clicking outside
@@ -64,7 +76,7 @@ export default function Home() {
                         {/* Logo */}
                         <div className="flex items-center space-x-2">
                             <Book className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-                            <span className="text-xl font-bold text-gray-900 dark:text-white">Max Publishing</span>
+                            <span className="text-xl font-bold text-gray-900 dark:text-white whitespace-nowrap">Max Publishing</span>
                         </div>
 
                         {/* Desktop Navigation */}
@@ -141,7 +153,7 @@ export default function Home() {
                                     placeholder={t(TEXTS.nav.search_placeholder)}
                                     className="w-64 pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                                 />
-                                <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400 dark:text-gray-500" />
+                                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-gray-500" />
                             </div>
 
                             {/* Cart & User */}
@@ -180,7 +192,7 @@ export default function Home() {
                                         placeholder={t(TEXTS.nav.search_placeholder)}
                                         className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                                     />
-                                    <Search className="absolute left-3 top-6.5 h-4 w-4 text-gray-400 dark:text-gray-500" />
+                                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-gray-500" />
                                 </div>
                             </div>
                         </div>
