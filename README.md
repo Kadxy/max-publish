@@ -4,20 +4,6 @@ A modern, bilingual (English/Italian) online bookstore template built with
 Next.js 14, TypeScript, and Tailwind CSS. Perfect for creating professional
 book retail websites with dark mode support and responsive design.
 
-## Screenshots
-
-### Homepage - Light Mode
-
-![Homepage Light Mode](public/images/screenshots/homepage-light.jpeg)
-
-### Homepage - Dark Mode
-
-![Homepage Dark Mode](public/images/screenshots/homepage-dark.jpeg)
-
-### Featured Books Section
-
-![Featured Books Section](public/images/screenshots/books-section.jpeg)
-
 ## Features
 
 - 🌐 **Bilingual template** (English/Italian) with real-time language switching
