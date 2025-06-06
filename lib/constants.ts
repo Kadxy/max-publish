@@ -244,7 +244,7 @@ export const TEXTS = {
     {
       id: '2',
       name: 'Paolo Rumiz',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face',
+      image: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400&h=400&fit=crop&crop=face',
       bio: {
         en: 'Paolo Rumiz is an Italian journalist and writer born in Trieste. A special correspondent and editorialist for La Repubblica, he has covered the Balkans extensively and won the Hemingway Prize for his work on Bosnia.',
         it: 'Paolo Rumiz è un giornalista e scrittore italiano nato a Trieste. Inviato speciale ed editorialista de La Repubblica, ha coperto ampiamente i Balcani e ha vinto il Premio Hemingway per il suo lavoro sulla Bosnia.'
@@ -254,7 +254,7 @@ export const TEXTS = {
     {
       id: '3',
       name: 'Massimo Carlotto',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+      image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face',
       bio: {
         en: 'Massimo Carlotto is one of Italy\'s most popular crime writers. Known for his gritty, realistic portrayals of contemporary Italian society, his works often explore themes of justice and corruption.',
         it: 'Massimo Carlotto è uno dei più popolari scrittori di gialli d\'Italia. Conosciuto per le sue rappresentazioni crude e realistiche della società italiana contemporanea, le sue opere esplorano spesso temi di giustizia e corruzione.'

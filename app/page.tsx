@@ -207,7 +207,7 @@ export default function Home() {
                         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
                             {t(TEXTS.hero.title)}
                         </h1>
-                        <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+                        <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
                             {t(TEXTS.hero.subtitle)}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -262,11 +262,11 @@ export default function Home() {
                         {TEXTS.sampleBooks.slice(0, 8).map((book) => (
                             <div key={book.id} className="bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-md dark:hover:shadow-2xl transition-all duration-300 overflow-hidden group flex flex-col h-full">
                                 {/* Book Cover */}
-                                <div className="aspect-[3/4] bg-gray-100 dark:bg-gray-800 overflow-hidden">
+                                <div className="aspect-[3/4] bg-gray-100 dark:bg-gray-800 overflow-hidden p-2">
                                     <img
                                         src={book.image}
                                         alt={t(book.title)}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-300"
                                         onError={(e) => {
                                             const target = e.target as HTMLImageElement;
                                             target.style.display = 'none';
@@ -357,50 +357,14 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Customer Reviews Section */}
-            <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                            {t(TEXTS.reviews.title)}
-                        </h2>
-                        <p className="text-xl text-gray-600 dark:text-gray-300">
-                            {t(TEXTS.reviews.subtitle)}
-                        </p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {TEXTS.customerReviews.map((review) => (
-                            <div key={review.id} className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-sm hover:shadow-md dark:hover:shadow-2xl transition-shadow">
-                                <div className="flex items-center mb-4">
-                                    {[...Array(5)].map((_, i) => (
-                                        <Star key={i} className={`h-5 w-5 ${i < review.rating ? 'text-yellow-400 fill-current' : 'text-gray-300 dark:text-gray-600'}`} />
-                                    ))}
-                                </div>
-                                <p className="text-gray-700 dark:text-gray-300 mb-4 italic">
-                                    "{t(review.text)}"
-                                </p>
-                                <div className="flex items-center">
-                                    <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 rounded-full flex items-center justify-center mr-3">
-                                        <User className="h-5 w-5 text-blue-400 dark:text-blue-300" />
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold text-gray-900 dark:text-white">{review.name}</p>
-                                        <p className="text-sm text-gray-500 dark:text-gray-400">{review.location}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* Newsletter Section */}
-            <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-800 dark:to-blue-900 transition-colors">
+            <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-700 dark:to-blue-800 transition-colors">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl font-bold text-white mb-4">
+                    <h2 className="text-3xl font-bold text-white dark:text-gray-100 mb-4">
                         {language === 'en' ? 'Stay Updated with New Releases' : 'Rimani Aggiornato con le Nuove Uscite'}
                     </h2>
-                    <p className="text-blue-100 dark:text-blue-200 mb-8 max-w-2xl mx-auto">
+                    <p className="text-blue-100 dark:text-blue-200 mb-8 max-w-3xl mx-auto">
                         {language === 'en'
                             ? 'Subscribe to our newsletter and be the first to know about new books, special offers, and literary events.'
                             : 'Iscriviti alla nostra newsletter e sii il primo a sapere di nuovi libri, offerte speciali ed eventi letterari.'
