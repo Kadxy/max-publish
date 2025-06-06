@@ -81,12 +81,12 @@ export default function Home() {
 
                         {/* Desktop Navigation */}
                         <nav className="hidden md:flex items-center space-x-8">
-                            <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{t(TEXTS.nav.home)}</a>
-                            <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{t(TEXTS.nav.books)}</a>
-                            <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{t(TEXTS.nav.categories)}</a>
-                            <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{t(TEXTS.nav.bestsellers)}</a>
-                            <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{t(TEXTS.nav.about)}</a>
-                            <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{t(TEXTS.nav.contact)}</a>
+                            <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors whitespace-nowrap">{t(TEXTS.nav.home)}</a>
+                            <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors whitespace-nowrap">{t(TEXTS.nav.books)}</a>
+                            <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors whitespace-nowrap">{t(TEXTS.nav.categories)}</a>
+                            <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors whitespace-nowrap">{t(TEXTS.nav.bestsellers)}</a>
+                            <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors whitespace-nowrap">{t(TEXTS.nav.about)}</a>
+                            <a href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors whitespace-nowrap">{t(TEXTS.nav.contact)}</a>
                         </nav>
 
                         {/* Right Side */}
@@ -320,7 +320,7 @@ export default function Home() {
                                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{author.name}</h3>
                                 <p className="text-gray-600 dark:text-gray-400 mb-4">{t(author.bio)}</p>
                                 <p className="text-sm text-blue-600 dark:text-blue-400 font-semibold">
-                                    {author.books} {language === 'en' ? 'books published' : 'libri pubblicati'}
+                                    {Array.isArray(author.books) ? author.books.length : author.books} {language === 'en' ? 'books published' : 'libri pubblicati'}
                                 </p>
                             </div>
                         ))}
