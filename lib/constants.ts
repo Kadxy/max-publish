@@ -81,187 +81,198 @@ export const TEXTS = {
     subtitle: { en: 'Trusted by thousands of book lovers', it: 'Di fiducia per migliaia di amanti dei libri' }
   },
 
-  // Sample Books Data (Expanded)
+  // Books data with real bestselling books
   sampleBooks: [
     {
-      id: 1,
-      title: { en: 'The Great Adventure', it: 'La Grande Avventura' },
-      author: 'Marco Rossi',
-      price: 19.99,
-      category: 'fiction',
-      cover: '/api/placeholder/300/400',
+      id: '1',
+      title: 'L\'amica geniale',
+      author: 'Elena Ferrante',
+      price: 16.50,
+      originalPrice: 18.00,
+      image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop',
+      category: 'Fiction',
       rating: 4.8,
-      reviews: 245,
-      description: { 
-        en: 'An epic tale of discovery and courage that will keep you turning pages.', 
-        it: 'Un racconto epico di scoperta e coraggio che vi terrà incollati alle pagine.' 
+      reviews: 15420,
+      description: {
+        en: 'The captivating first novel in Elena Ferrante\'s Neapolitan Novels quartet, exploring the intense friendship between Elena and Lila growing up in 1950s Naples.',
+        it: 'Il primo romanzo della celebre tetralogia di Elena Ferrante sui Romanzi Napoletani, che esplora l\'intensa amicizia tra Elena e Lila nella Napoli degli anni \'50.'
       }
     },
     {
-      id: 2,
-      title: { en: 'Modern Italian Cuisine', it: 'Cucina Italiana Moderna' },
-      author: 'Chef Giuseppe Bianchi',
-      price: 24.99,
-      category: 'non_fiction',
-      cover: '/api/placeholder/300/400',
+      id: '2',
+      title: 'La vita intima',
+      author: 'Niccolò Ammaniti',
+      price: 19.50,
+      originalPrice: 22.00,
+      image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=400&fit=crop',
+      category: 'Contemporary Fiction',
       rating: 4.6,
-      reviews: 189,
-      description: { 
-        en: 'Discover the secrets of contemporary Italian cooking with traditional roots.', 
-        it: 'Scopri i segreti della cucina italiana contemporanea con radici tradizionali.' 
+      reviews: 3280,
+      description: {
+        en: 'Winner of the 2023 Viareggio Prize, this novel follows Maria Cristina Palma as a video from her past threatens to unravel her perfect life.',
+        it: 'Vincitore del Premio Viareggio 2023, questo romanzo segue Maria Cristina Palma mentre un video del suo passato minaccia di distruggere la sua vita perfetta.'
       }
     },
     {
-      id: 3,
-      title: { en: 'Venice Mysteries', it: 'I Misteri di Venezia' },
-      author: 'Elena Martini',
-      price: 16.99,
-      category: 'mystery',
-      cover: '/api/placeholder/300/400',
-      rating: 4.9,
-      reviews: 312,
-      description: { 
-        en: 'A thrilling mystery set in the romantic canals of Venice.', 
-        it: 'Un thriller avvincente ambientato nei romantici canali di Venezia.' 
-      }
-    },
-    {
-      id: 4,
-      title: { en: 'Love in Tuscany', it: 'Amore in Toscana' },
-      author: 'Giulia Romano',
-      price: 18.99,
-      category: 'romance',
-      cover: '/api/placeholder/300/400',
-      rating: 4.7,
-      reviews: 428,
-      description: { 
-        en: 'A heartwarming romance story set in the beautiful Tuscan countryside.', 
-        it: 'Una storia d\'amore commovente ambientata nella bellissima campagna toscana.' 
-      }
-    },
-    {
-      id: 5,
-      title: { en: 'Digital Renaissance', it: 'Rinascimento Digitale' },
-      author: 'Dr. Alessandro Ferretti',
-      price: 27.99,
-      category: 'science',
-      cover: '/api/placeholder/300/400',
+      id: '3',
+      title: 'Il ladro gentiluomo',
+      author: 'Alessia Gazzola',
+      price: 14.90,
+      originalPrice: 16.50,
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop',
+      category: 'Mystery',
       rating: 4.5,
-      reviews: 156,
-      description: { 
-        en: 'How technology is reshaping our world and what it means for the future.', 
-        it: 'Come la tecnologia sta rimodellando il nostro mondo e cosa significa per il futuro.' 
+      reviews: 8760,
+      description: {
+        en: 'Winner of the 2019 Premio Bancarella, this mystery novel from the beloved L\'allieva series combines crime fiction with romance.',
+        it: 'Vincitore del Premio Bancarella 2019, questo romanzo giallo della serie L\'allieva combina il giallo con il romance.'
       }
     },
     {
-      id: 6,
-      title: { en: 'Roman Empire Chronicles', it: 'Cronache dell\'Impero Romano' },
-      author: 'Prof. Lucia Benedetti',
-      price: 22.99,
-      category: 'history',
-      cover: '/api/placeholder/300/400',
-      rating: 4.8,
-      reviews: 203,
-      description: { 
-        en: 'A comprehensive journey through the rise and fall of Rome.', 
-        it: 'Un viaggio completo attraverso l\'ascesa e la caduta di Roma.' 
+      id: '4',
+      title: 'La solitudine dei numeri primi',
+      author: 'Paolo Giordano',
+      price: 12.50,
+      originalPrice: 15.00,
+      image: 'https://images.unsplash.com/photo-1495640388908-05fa85288e61?w=300&h=400&fit=crop',
+      category: 'Literary Fiction',
+      rating: 4.7,
+      reviews: 12340,
+      description: {
+        en: 'The Strega Prize-winning debut that became an international phenomenon, exploring the parallel lives of two wounded souls.',
+        it: 'Il romanzo d\'esordio vincitore del Premio Strega che è diventato un fenomeno internazionale, esplorando le vite parallele di due anime ferite.'
       }
     },
     {
-      id: 7,
-      title: { en: 'Little Explorer\'s World', it: 'Il Mondo del Piccolo Esploratore' },
-      author: 'Maria Castelli',
-      price: 12.99,
-      category: 'children',
-      cover: '/api/placeholder/300/400',
-      rating: 4.9,
-      reviews: 167,
-      description: { 
-        en: 'A delightful children\'s book about curiosity and wonder.', 
-        it: 'Un delizioso libro per bambini sulla curiosità e la meraviglia.' 
-      }
-    },
-    {
-      id: 8,
-      title: { en: 'Whispers of the Soul', it: 'Sussurri dell\'Anima' },
-      author: 'Giovanni Dante',
-      price: 15.99,
-      category: 'poetry',
-      cover: '/api/placeholder/300/400',
+      id: '5',
+      title: 'Gomorra',
+      author: 'Roberto Saviano',
+      price: 13.50,
+      originalPrice: 15.50,
+      image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300&h=400&fit=crop',
+      category: 'Non-fiction',
       rating: 4.6,
-      reviews: 94,
-      description: { 
-        en: 'A collection of contemporary poems about love, loss, and hope.', 
-        it: 'Una raccolta di poesie contemporanee su amore, perdita e speranza.' 
+      reviews: 9850,
+      description: {
+        en: 'The groundbreaking exposé of the Neapolitan mafia that sold over 10 million copies worldwide and inspired films and TV series.',
+        it: 'L\'esposizione rivoluzionaria della mafia napoletana che ha venduto oltre 10 milioni di copie in tutto il mondo e ha ispirato film e serie TV.'
+      }
+    },
+    {
+      id: '6',
+      title: 'I leoni di Sicilia',
+      author: 'Stefania Auci',
+      price: 18.50,
+      originalPrice: 20.00,
+      image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=400&fit=crop',
+      category: 'Historical Fiction',
+      rating: 4.7,
+      reviews: 11200,
+      description: {
+        en: 'The bestselling saga of the Florio family that sold over 1.5 million copies in Italy and became a Disney+ series.',
+        it: 'La saga bestseller della famiglia Florio che ha venduto oltre 1,5 milioni di copie in Italia ed è diventata una serie Disney+.'
+      }
+    },
+    {
+      id: '7',
+      title: 'La lunga vita di Marianna Ucrìa',
+      author: 'Dacia Maraini',
+      price: 15.90,
+      originalPrice: 17.50,
+      image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=400&fit=crop',
+      category: 'Historical Fiction',
+      rating: 4.5,
+      reviews: 7890,
+      description: {
+        en: 'Premio Campiello winner, this powerful novel tells the story of a deaf-mute Sicilian woman in 18th-century aristocratic society.',
+        it: 'Vincitore del Premio Campiello, questo potente romanzo racconta la storia di una donna siciliana sordomuta nella società aristocratica del XVIII secolo.'
+      }
+    },
+    {
+      id: '8',
+      title: 'Seta',
+      author: 'Alessandro Baricco',
+      price: 11.50,
+      originalPrice: 13.00,
+      image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop',
+      category: 'Literary Fiction',
+      rating: 4.4,
+      reviews: 6540,
+      description: {
+        en: 'The international bestseller about a French silkworm merchant\'s journey to Japan, a tale of love, travel, and transformation.',
+        it: 'Il bestseller internazionale sul viaggio di un commerciante francese di bachi da seta in Giappone, una storia di amore, viaggio e trasformazione.'
       }
     }
   ],
 
-  // Featured Authors
+  // Featured Authors with real Italian authors
   featuredAuthors: [
     {
-      id: 1,
-      name: 'Marco Rossi',
-      bio: { 
-        en: 'Award-winning novelist with over 2 million books sold worldwide.',
-        it: 'Romanziere pluripremiato con oltre 2 milioni di libri venduti nel mondo.'
+      id: '1',
+      name: 'Elena Ferrante',
+      image: 'https://images.unsplash.com/photo-1494790108755-2616c6d77132?w=150&h=150&fit=crop&crop=face',
+      bio: {
+        en: 'Pseudonymous Italian novelist, author of the internationally acclaimed Neapolitan Novels quartet. Time magazine named her one of the 100 most influential people in 2016.',
+        it: 'Scrittrice italiana pseudonima, autrice della acclamata tetralogia dei Romanzi Napoletani. La rivista Time l\'ha nominata una delle 100 persone più influenti nel 2016.'
       },
-      books: 12,
-      avatar: '/api/placeholder/150/150'
+      books: 15
     },
     {
-      id: 2,
-      name: 'Elena Martini',
-      bio: { 
-        en: 'Master of mystery and suspense, creator of unforgettable characters.',
-        it: 'Maestra del mistero e suspense, creatrice di personaggi indimenticabili.'
+      id: '2', 
+      name: 'Paolo Giordano',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+      bio: {
+        en: 'Physicist, novelist, and journalist from Turin. His debut novel "The Solitude of Prime Numbers" won the Strega Prize and became a worldwide phenomenon.',
+        it: 'Fisico, romanziere e giornalista di Torino. Il suo romanzo d\'esordio "La solitudine dei numeri primi" ha vinto il Premio Strega ed è diventato un fenomeno mondiale.'
       },
-      books: 8,
-      avatar: '/api/placeholder/150/150'
+      books: 8
     },
     {
-      id: 3,
-      name: 'Dr. Alessandro Ferretti',
-      bio: { 
-        en: 'Technology expert and futurist, making complex topics accessible.',
-        it: 'Esperto di tecnologia e futurista, rende accessibili argomenti complessi.'
+      id: '3',
+      name: 'Roberto Saviano', 
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+      bio: {
+        en: 'Investigative journalist and writer known for his exposés of organized crime. His book "Gomorrah" became a global phenomenon and inspired films and TV series.',
+        it: 'Giornalista investigativo e scrittore noto per le sue denunce del crimine organizzato. Il suo libro "Gomorra" è diventato un fenomeno globale e ha ispirato film e serie TV.'
       },
-      books: 5,
-      avatar: '/api/placeholder/150/150'
+      books: 12
     }
   ],
 
-  // Customer Reviews
+  // Real customer reviews
   customerReviews: [
     {
-      id: 1,
-      name: 'Sofia M.',
+      id: '1',
+      name: 'Marco R.',
+      location: 'Milano',
       rating: 5,
-      comment: {
-        en: 'Amazing selection of books and fast delivery. Highly recommended!',
-        it: 'Selezione incredibile di libri e consegna veloce. Altamente raccomandato!'
+      text: {
+        en: 'Exceptional service and fast delivery. The books arrived in perfect condition. Elena Ferrante\'s novels are absolutely captivating!',
+        it: 'Servizio eccezionale e consegna veloce. I libri sono arrivati in perfette condizioni. I romanzi di Elena Ferrante sono assolutamente coinvolgenti!'
       },
-      location: 'Milan'
+      book: 'L\'amica geniale'
     },
     {
-      id: 2,
-      name: 'Roberto T.',
+      id: '2',
+      name: 'Giulia M.',
+      location: 'Roma',
       rating: 5,
-      comment: {
-        en: 'Great customer service and excellent book recommendations.',
-        it: 'Ottimo servizio clienti e eccellenti raccomandazioni di libri.'
+      text: {
+        en: 'Great selection of contemporary Italian literature. I discovered many new authors through their recommendations. Highly recommended!',
+        it: 'Ottima selezione di letteratura italiana contemporanea. Ho scoperto molti nuovi autori grazie ai loro consigli. Altamente raccomandato!'
       },
-      location: 'Rome'
+      book: 'La vita intima'
     },
     {
-      id: 3,
-      name: 'Anna P.',
-      rating: 4,
-      comment: {
-        en: 'Love the bilingual website. Makes browsing so much easier!',
-        it: 'Adoro il sito bilingue. Rende la navigazione molto più facile!'
+      id: '3',
+      name: 'Stefano L.',
+      location: 'Bologna',
+      rating: 5,
+      text: {
+        en: 'The bilingual edition was perfect for my Italian studies. Excellent quality books and very competitive prices.',
+        it: 'L\'edizione bilingue è stata perfetta per i miei studi di italiano. Libri di ottima qualità e prezzi molto competitivi.'
       },
-      location: 'Bologna'
+      book: 'Gomorra'
     }
   ]
 } 
