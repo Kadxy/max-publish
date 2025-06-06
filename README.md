@@ -1,7 +1,8 @@
-# Max Publishing - Online Bookstore
+# Book Web Template
 
-A modern, bilingual (English/Italian) online bookstore built with Next.js and
-Tailwind CSS.
+A modern, bilingual (English/Italian) online bookstore template built with
+Next.js 14, TypeScript, and Tailwind CSS. Perfect for creating professional
+book retail websites with dark mode support and responsive design.
 
 ## Screenshots
 
@@ -19,15 +20,16 @@ Tailwind CSS.
 
 ## Features
 
-- 🌐 **Bilingual support** (English/Italian) with real-time language switching
-- 🌙 **Dark/Light mode** with system preference detection
-- 📚 **Modern, responsive design** inspired by top Italian bookstores
-- 🛒 **Enhanced book catalog** with ratings, reviews, and 8 books showcase
-- 👥 **Featured authors section** with author profiles
-- ⭐ **Customer reviews** with star ratings
-- 📱 **Mobile-first interface** with touch-friendly navigation
-- ⚡ **Fast static site generation** optimized for performance
-- 🚀 **Ready for Vercel deployment** with one-click setup
+- 🌐 **Bilingual template** (English/Italian) with real-time language switching
+- 🌙 **Dark/Light/System mode** with automatic theme detection
+- 📚 **Professional design** inspired by leading Italian bookstores
+- 🛒 **Complete book catalog** with ratings, reviews, and carousel showcase
+- 👥 **Author profiles section** with bio and publication counts
+- 📱 **Fully responsive** mobile-first interface design
+- ⚡ **Next.js 14** with App Router and TypeScript for type safety
+- 🎨 **Tailwind CSS** utility-first styling system
+- 🚀 **Production ready** for Vercel deployment
+- 📦 **Easy customization** through centralized constants
 
 ## Company Information
 
@@ -45,12 +47,12 @@ Tailwind CSS.
 - Node.js 18+
 - npm or yarn
 
-### Installation
+### Quick Start
 
-1. Clone the repository
+1. Clone this template
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Kadxy/book-web.git
 cd book-web
 ```
 
@@ -60,13 +62,22 @@ cd book-web
 npm install
 ```
 
-1. Run the development server
+1. Start development server
 
 ```bash
 npm run dev
 ```
 
-1. Open [http://localhost:3000](http://localhost:3000) in your browser
+1. Open [http://localhost:3000](http://localhost:3000) to view your bookstore
+
+### Customization
+
+After installation, customize the template by:
+
+- Edit `lib/constants.ts` to add your books, company info, and translations
+- Replace images in `public/images/` with your own book covers and branding
+- Modify colors and styling in `tailwind.config.js`
+- Update company information in the footer and about sections
 
 ## Deployment to Vercel
 
@@ -136,7 +147,7 @@ Three theme modes are available:
 Theme switching is available in the header next to language options. The
 selected theme is saved in localStorage.
 
-## Customization
+## Advanced Customization
 
 ### Adding New Books
 

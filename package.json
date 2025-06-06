@@ -1,7 +1,9 @@
 {
-  "name": "book-web",
-  "version": "0.1.0",
-  "private": true,
+  "name": "book-web-template",
+  "version": "1.0.0",
+  "description": "Modern bilingual (EN/IT) bookstore template built with Next.js 14, TypeScript, and Tailwind CSS",
+  "keywords": ["nextjs", "bookstore", "template", "bilingual", "dark-mode", "typescript", "tailwind"],
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
