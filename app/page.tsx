@@ -291,11 +291,11 @@ export default function Home() {
             {/* Featured Books Section */}
             <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
                             {t(TEXTS.featured.title)}
                         </h2>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center justify-center space-x-2">
                             <button
                                 onClick={prevBookSlide}
                                 disabled={currentBookSlide === 0}
@@ -365,6 +365,95 @@ export default function Home() {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* New Arrivals Section */}
+            <section className="py-16 bg-white dark:bg-gray-900 transition-colors">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+                            {t(TEXTS.newArrivals.title)}
+                        </h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {TEXTS.newArrivalBooks.slice(0, 6).map((book) => {
+                            const getTagColors = (index: number) => {
+                                const colors = [
+                                    'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300',
+                                    'bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300',
+                                    'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300',
+                                    'bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300',
+                                    'bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300',
+                                    'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300'
+                                ];
+                                return colors[index % colors.length];
+                            };
+
+                            return (
+                                <div key={book.id} className="group cursor-pointer">
+                                    <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover:shadow-lg dark:hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700">
+                                        <div className="flex space-x-4">
+                                            {/* Book Cover */}
+                                            <div className="flex-shrink-0 w-20 h-28 bg-white dark:bg-gray-700 rounded-lg p-2 flex items-center justify-center shadow-sm">
+                                                <img
+                                                    src={book.image}
+                                                    alt={t(book.title)}
+                                                    className="w-full h-full object-cover rounded-sm group-hover:scale-105 transition-transform duration-300"
+                                                    onError={(e) => {
+                                                        const target = e.target as HTMLImageElement;
+                                                        target.style.display = 'none';
+                                                        target.parentElement!.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 flex items-center justify-center rounded-sm"><svg class="h-8 w-8 text-blue-400 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"></path></svg></div>';
+                                                    }}
+                                                />
+                                            </div>
+
+                                            {/* Book Info */}
+                                            <div className="flex-1 min-w-0">
+                                                {/* Tags */}
+                                                <div className="flex flex-wrap gap-1 mb-2">
+                                                    {book.tags.map((tag, index) => (
+                                                        <span
+                                                            key={tag}
+                                                            className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${getTagColors(index)}`}
+                                                        >
+                                                            {tag}
+                                                        </span>
+                                                    ))}
+                                                </div>
+
+                                                <h3 className="font-semibold text-sm text-gray-900 dark:text-white mb-1 line-clamp-2 leading-tight">
+                                                    {t(book.title)}
+                                                </h3>
+                                                <p className="text-gray-600 dark:text-gray-400 text-xs mb-2">di {book.author}</p>
+
+                                                {/* Rating */}
+                                                <div className="flex items-center gap-1 mb-2">
+                                                    <div className="flex items-center">
+                                                        {[...Array(5)].map((_, i) => (
+                                                            <Star key={i} className={`h-3 w-3 ${i < Math.floor(book.rating) ? 'text-orange-400 fill-current' : 'text-gray-300 dark:text-gray-600'}`} />
+                                                        ))}
+                                                    </div>
+                                                    <span className="text-xs text-gray-500 dark:text-gray-400">
+                                                        ({book.reviews})
+                                                    </span>
+                                                </div>
+
+                                                {/* Price */}
+                                                <div className="flex items-center gap-2">
+                                                    <span className="text-base font-bold text-gray-900 dark:text-white">€{book.price}</span>
+                                                    {book.originalPrice && (
+                                                        <span className="text-xs text-gray-400 dark:text-gray-500 line-through">€{book.originalPrice}</span>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </section>

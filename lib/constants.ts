@@ -37,6 +37,15 @@ export const TEXTS = {
     bestsellers_title: { en: 'Current Bestsellers', it: 'Bestseller Attuali' },
     new_releases_title: { en: 'New Releases', it: 'Nuove Uscite' }
   },
+
+  // New Arrivals
+  newArrivals: {
+    title: { en: 'New Arrivals', it: 'Nuovi Arrivi' },
+    subtitle: { en: 'Fresh books just added to our collection', it: 'Libri freschi appena aggiunti alla nostra collezione' },
+    view_all: { en: 'View All New Books', it: 'Vedi Tutti i Nuovi Libri' },
+    just_arrived: { en: 'Just Arrived', it: 'Appena Arrivato' },
+    pre_order: { en: 'Pre-order', it: 'Pre-ordina' }
+  },
   
   // Footer
   footer: {
@@ -77,209 +86,331 @@ export const TEXTS = {
     subtitle: { en: 'Trusted by thousands of book lovers', it: 'Di fiducia per migliaia di amanti dei libri' }
   },
 
-  // Books data with real books from user's images
+  // Books data with real books from OpenLibrary
   sampleBooks: [
     {
       id: '1',
       title: {
-        en: 'New Beginnings at Strawberry Patch Pancake House',
-        it: 'Nuovi inizi a Strawberry Patch Pancake House'
+        en: 'The Seven Husbands of Evelyn Hugo',
+        it: 'I Sette Mariti di Evelyn Hugo'
       },
-      author: 'Laurie Gilmore',
+      author: 'Taylor Jenkins Reid',
       price: 16.90,
       originalPrice: 18.50,
-      image: '/images/books/book1.jpg',
+      image: 'https://covers.openlibrary.org/b/id/8354226-M.jpg',
       category: 'Romance',
       rating: 5,
       reviews: 2340,
       description: {
-        en: 'A heartwarming romance set in a charming small town pancake house, where new beginnings bloom with every sunrise and love finds its way through homemade syrup and fresh starts.',
-        it: 'Un romanzo commovente ambientato in una graziosa casa di pancake di provincia, dove nuovi inizi sbocciano ad ogni alba e l\'amore trova la sua strada attraverso sciroppo fatto in casa e nuovi inizi.'
+        en: 'A captivating novel about a reclusive Hollywood icon who finally decides to tell her story to an unknown journalist.',
+        it: 'Un romanzo avvincente su un\'icona reclusa di Hollywood che finalmente decide di raccontare la sua storia a una giornalista sconosciuta.'
       }
     },
     {
       id: '2',
       title: {
-        en: 'The Dark Immensity of Death',
-        it: 'L\'oscura immensità della morte'
+        en: 'Where the Crawdads Sing',
+        it: 'Il Canto dei Gamberi'
       },
-      author: 'Massimo Carlotto',
+      author: 'Delia Owens',
       price: 18.50,
       originalPrice: 20.00,
-      image: '/images/books/book2.jpg',
+      image: 'https://covers.openlibrary.org/b/id/8362947-M.jpg',
       category: 'Mystery',
       rating: 5,
       reviews: 1820,
       description: {
-        en: 'A gripping noir thriller from the master of Italian crime fiction, exploring the darkest corners of human nature and the relentless pursuit of justice.',
-        it: 'Un avvincente thriller noir dal maestro del giallo italiano, che esplora gli angoli più oscuri della natura umana e l\'implacabile ricerca della giustizia.'
+        en: 'A mystery and coming-of-age story set in the marshes of North Carolina, where nature is both sanctuary and threat.',
+        it: 'Un mistero e una storia di formazione ambientata nelle paludi del North Carolina, dove la natura è sia santuario che minaccia.'
       }
     },
     {
       id: '3',
       title: {
-        en: 'The Swallow\'s Talent',
-        it: 'Il talento della rondine'
+        en: 'Later',
+        it: 'Dopo'
       },
-      author: 'Matteo Bussola',
+      author: 'Stephen King',
       price: 17.50,
       originalPrice: 19.00,
-      image: '/images/books/book3.jpg',
-      category: 'Contemporary Fiction',
+      image: 'https://covers.openlibrary.org/b/id/14654000-M.jpg',
+      category: 'Horror',
       rating: 4.7,
       reviews: 3245,
       description: {
-        en: 'A poignant meditation on fatherhood, love, and the profound connections that shape our lives, told with Bussola\'s signature emotional depth.',
-        it: 'Una meditazione toccante sulla paternità, l\'amore e le profonde connessioni che plasmano le nostre vite, raccontata con la caratteristica profondità emotiva di Bussola.'
+        en: 'A supernatural thriller about a boy who can see and talk to the dead, but wishes he couldn\'t.',
+        it: 'Un thriller soprannaturale su un ragazzo che può vedere e parlare con i morti, ma vorrebbe non poterlo fare.'
       }
     },
     {
       id: '4',
       title: {
-        en: 'Beautiful and Lost',
-        it: 'Bella e perduta'
+        en: 'Eva Luna',
+        it: 'Eva Luna'
       },
-      author: 'Paolo Rumiz',
+      author: 'Isabel Allende',
       price: 19.50,
       originalPrice: 21.00,
-      image: '/images/books/book4.jpg',
-      category: 'Travel',
+      image: 'https://covers.openlibrary.org/b/id/3205240-M.jpg',
+      category: 'Literary Fiction',
       rating: 5,
       reviews: 1567,
       description: {
-        en: 'A journey through Garibaldi\'s Italy, exploring the forgotten corners of the Risorgimento with Rumiz\'s masterful storytelling and keen historical insight.',
-        it: 'Un viaggio attraverso l\'Italia garibaldina, esplorando gli angoli dimenticati del Risorgimento con la magistrale narrativa di Rumiz e la sua acuta visione storica.'
+        en: 'The story of Eva Luna, a Latin American Scheherazade who weaves tales that blur the boundaries between reality and imagination.',
+        it: 'La storia di Eva Luna, una Sherazade latinoamericana che tesse racconti che sfumano i confini tra realtà e immaginazione.'
       }
     },
     {
       id: '5',
       title: {
-        en: 'Never Flinch',
-        it: 'Never Flinch'
+        en: 'Hija de la fortuna',
+        it: 'Figlia della Fortuna'
       },
-      author: 'Stephen King',
+      author: 'Isabel Allende',
       price: 22.50,
       originalPrice: 25.00,
-      image: '/images/books/book5.jpg',
-      category: 'Horror',
+      image: 'https://covers.openlibrary.org/b/id/10574160-M.jpg',
+      category: 'Historical Fiction',
       rating: 4.8,
       reviews: 4521,
       description: {
-        en: 'A harrowing tale of survival and moral courage, where ordinary people face extraordinary evil and must choose between safety and doing what\'s right.',
-        it: 'Un racconto straziante di sopravvivenza e coraggio morale, dove persone comuni affrontano il male straordinario e devono scegliere tra sicurezza e fare ciò che è giusto.'
+        en: 'An epic tale of love and adventure set during the California Gold Rush, following a young Chilean woman\'s journey.',
+        it: 'Un racconto epico di amore e avventura ambientato durante la corsa all\'oro della California, seguendo il viaggio di una giovane donna cilena.'
       }
     },
     {
       id: '6',
       title: {
-        en: 'My Name is Valley Leaf',
-        it: 'Il mio nome è Foglia del Valle'
+        en: 'Sostiene Pereira',
+        it: 'Sostiene Pereira'
       },
-      author: 'Isabel Allende',
+      author: 'Antonio Tabucchi',
       price: 20.00,
       originalPrice: 22.50,
-      image: '/images/books/book6.jpg',
+      image: 'https://covers.openlibrary.org/b/id/5496834-M.jpg',
       category: 'Literary Fiction',
       rating: 4.5,
       reviews: 2876,
       description: {
-        en: 'Allende\'s magical realism shines in this story of identity, belonging, and the power of names to shape our destiny across generations.',
-        it: 'Il realismo magico di Allende brilla in questa storia di identità, appartenenza e il potere dei nomi di plasmare il nostro destino attraverso le generazioni.'
+        en: 'A profound meditation on literature, resistance, and moral awakening set in 1930s Lisbon.',
+        it: 'Una profonda meditazione su letteratura, resistenza e risveglio morale ambientata nella Lisbona degli anni \'30.'
       }
     },
     {
       id: '7',
       title: {
-        en: 'The Mute Parrot',
-        it: 'Il pappagallo muto'
+        en: 'Requiem',
+        it: 'Requiem'
       },
-      author: 'Maurizio de Giovanni',
+      author: 'Antonio Tabucchi',
       price: 16.50,
       originalPrice: 18.00,
-      image: '/images/books/book7.jpg',
-      category: 'Mystery',
+      image: 'https://covers.openlibrary.org/b/id/598181-M.jpg',
+      category: 'Literary Fiction',
       rating: 5,
       reviews: 1934,
       description: {
-        en: 'A captivating mystery featuring Sara, where silence speaks louder than words and the truth hides behind unexpected facades.',
-        it: 'Un mistero avvincente con protagonista Sara, dove il silenzio parla più forte delle parole e la verità si nasconde dietro facciate inaspettate.'
+        en: 'A dreamlike journey through Lisbon where the narrator searches for a lost friend, blending reality with memory.',
+        it: 'Un viaggio onirico attraverso Lisbona dove il narratore cerca un amico perduto, mescolando realtà e memoria.'
       }
     },
     {
       id: '8',
       title: {
-        en: 'The Post Office Queue',
-        it: 'La fila alle poste'
+        en: 'Notturno indiano',
+        it: 'Notturno indiano'
       },
-      author: 'Chiara Valerio',
+      author: 'Antonio Tabucchi',
       price: 17.00,
       originalPrice: 19.50,
-      image: '/images/books/book8.jpg',
-      category: 'Contemporary Fiction',
+      image: 'https://covers.openlibrary.org/b/id/598081-M.jpg',
+      category: 'Literary Fiction',
       rating: 4.2,
       reviews: 1245,
       description: {
-        en: 'A witty and insightful exploration of modern Italian life through the microcosm of a post office queue, revealing the comedy and drama of everyday existence.',
-        it: 'Un\'esplorazione spiritosa e perspicace della vita italiana moderna attraverso il microcosmo di una fila alle poste, rivelando la commedia e il dramma dell\'esistenza quotidiana.'
+        en: 'A mysterious quest through India in search of a missing friend, exploring themes of identity and truth.',
+        it: 'Una ricerca misteriosa attraverso l\'India alla ricerca di un amico scomparso, esplorando temi di identità e verità.'
       }
     },
     {
       id: '9',
       title: {
-        en: 'The Laughing Woman',
-        it: 'La donna che ride'
+        en: 'The Midnight Library',
+        it: 'La Biblioteca di Mezzanotte'
       },
-      author: 'Maurizio de Giovanni',
+      author: 'Matt Haig',
       price: 18.50,
       originalPrice: 20.00,
-      image: '/images/books/book9.jpg',
-      category: 'Mystery',
+      image: 'https://covers.openlibrary.org/b/id/10313767-M.jpg',
+      category: 'Contemporary Fiction',
       rating: 5,
       reviews: 1876,
       description: {
-        en: 'A compelling mystery set in Naples, where laughter and sorrow intertwine in an unforgettable tale of human nature and justice.',
-        it: 'Un mistero avvincente ambientato a Napoli, dove risate e dolore si intrecciano in un racconto indimenticabile sulla natura umana e la giustizia.'
+        en: 'Between life and death there is a library, and within that library, the shelves go on forever.',
+        it: 'Tra la vita e la morte c\'è una biblioteca, e all\'interno di quella biblioteca, gli scaffali vanno all\'infinito.'
       }
     },
     {
       id: '10',
       title: {
-        en: 'Italian Stories',
-        it: 'Storie italiane'
+        en: 'Klara and the Sun',
+        it: 'Klara e il Sole'
       },
-      author: 'Antonio Tabucchi',
+      author: 'Kazuo Ishiguro',
       price: 16.00,
       originalPrice: 18.00,
-      image: '/images/books/book10.jpg',
+      image: 'https://covers.openlibrary.org/b/id/10648686-M.jpg',
       category: 'Literary Fiction',
       rating: 4.6,
       reviews: 2134,
       description: {
-        en: 'A collection of evocative stories that capture the essence of contemporary Italy through the eyes of one of its most celebrated writers.',
-        it: 'Una raccolta di storie evocative che catturano l\'essenza dell\'Italia contemporanea attraverso gli occhi di uno dei suoi scrittori più celebrati.'
+        en: 'From the Nobel Prize-winning author comes a luminous novel about love, loss, and what it means to be human.',
+        it: 'Dal vincitore del Premio Nobel arriva un romanzo luminoso su amore, perdita e cosa significa essere umani.'
       }
     },
     {
       id: '11',
       title: {
-        en: 'The Secret Garden',
-        it: 'Il giardino segreto'
+        en: 'The Thursday Murder Club',
+        it: 'Il Club degli Omicidi del Giovedì'
       },
-      author: 'Frances Hodgson Burnett',
+      author: 'Richard Osman',
       price: 14.50,
       originalPrice: 16.00,
-      image: '/images/books/book11.jpg',
-      category: 'Children',
+      image: 'https://covers.openlibrary.org/b/id/10201431-M.jpg',
+      category: 'Mystery',
       rating: 5,
       reviews: 3256,
       description: {
-        en: 'A timeless classic about the transformative power of nature, friendship, and the magic hidden in everyday life.',
-        it: 'Un classico senza tempo sul potere trasformativo della natura, dell\'amicizia e della magia nascosta nella vita quotidiana.'
+        en: 'Four unlikely friends meet weekly to investigate cold cases, but when a real murder happens, they find themselves in their first live case.',
+        it: 'Quattro improbabili amici si incontrano settimanalmente per indagare su casi irrisolti, ma quando accade un vero omicidio, si ritrovano nel loro primo caso dal vivo.'
       }
     }
   ],
 
-
+  // New Arrivals - Latest books added to the collection
+  newArrivalBooks: [
+    {
+      id: 'new1',
+      title: {
+        en: 'The Atlas of Dreams and Ghosts',
+        it: 'L\'atlante dei sogni e dei fantasmi'
+      },
+      author: 'Zen Cho',
+      price: 21.50,
+      originalPrice: 24.00,
+      image: 'https://covers.openlibrary.org/b/id/8739161-M.jpg',
+      tags: ['Fantasy', 'Award Winner'],
+      rating: 5,
+      reviews: 234,
+      isNew: true,
+      publishDate: '2024-01',
+      description: {
+        en: 'A magical collection of interconnected stories that span continents and centuries, weaving together Malaysian folklore with contemporary urban fantasy.',
+        it: 'Una collezione magica di storie interconnesse che attraversano continenti e secoli, intrecciando il folklore malese con la fantasy urbana contemporanea.'
+      }
+    },
+    {
+      id: 'new2',
+      title: {
+        en: 'Digital Minimalism',
+        it: 'Minimalismo Digitale'
+      },
+      author: 'Cal Newport',
+      price: 19.90,
+      originalPrice: 22.50,
+      image: 'https://covers.openlibrary.org/b/id/8507540-M.jpg',
+      tags: ['Self-Help'],
+      rating: 5,
+      reviews: 567,
+      isNew: true,
+      publishDate: '2024-01',
+      description: {
+        en: 'A philosophy for technology use that emphasizes quality over quantity, helping you create space for the things that truly matter.',
+        it: 'Una filosofia per l\'uso della tecnologia che enfatizza la qualità sulla quantità, aiutandoti a creare spazio per le cose che contano veramente.'
+      }
+    },
+    {
+      id: 'new3',
+      title: {
+        en: 'The Thursday Murder Club',
+        it: 'Il Club degli Omicidi del Giovedì'
+      },
+      author: 'Richard Osman',
+      price: 18.50,
+      originalPrice: 20.00,
+      image: 'https://covers.openlibrary.org/b/id/10201431-M.jpg',
+      tags: ['Mystery', 'Bestseller'],
+      rating: 4.9,
+      reviews: 1432,
+      isNew: true,
+      publishDate: '2024-01',
+      description: {
+        en: 'Four unlikely friends meet weekly to investigate cold cases, but when a real murder happens on their doorstep, they find themselves in the middle of their first live case.',
+        it: 'Quattro improbabili amici si incontrano settimanalmente per indagare su casi irrisolti, ma quando un vero omicidio accade sulla loro soglia, si ritrovano nel mezzo del loro primo caso dal vivo.'
+      }
+    },
+    {
+      id: 'new4',
+      title: {
+        en: 'Klara and the Sun',
+        it: 'Klara e il Sole'
+      },
+      author: 'Kazuo Ishiguro',
+      price: 23.50,
+      originalPrice: 26.00,
+      image: 'https://covers.openlibrary.org/b/id/10648686-M.jpg',
+      tags: ['Literary Fiction', 'Nobel Prize'],
+      rating: 4.4,
+      reviews: 2156,
+      isNew: true,
+      publishDate: '2024-01',
+      description: {
+        en: 'From the Nobel Prize-winning author comes a luminous novel about love, loss, and what it means to be human, told through the eyes of an artificial friend.',
+        it: 'Dal vincitore del Premio Nobel arriva un romanzo luminoso su amore, perdita e cosa significa essere umani, raccontato attraverso gli occhi di un amico artificiale.'
+      }
+    },
+    {
+      id: 'new5',
+      title: {
+        en: 'The Invisible Bridge',
+        it: 'Il Ponte Invisibile'
+      },
+      author: 'Julie Orringer',
+      price: 20.50,
+      originalPrice: 23.00,
+      image: 'https://covers.openlibrary.org/b/id/6680990-M.jpg',
+      tags: ['Historical Fiction'],
+      rating: 5,
+      reviews: 987,
+      isNew: true,
+      publishDate: '2024-01',
+      description: {
+        en: 'A sweeping historical novel that follows three Hungarian Jewish brothers through the tumultuous years of World War II.',
+        it: 'Un ampio romanzo storico che segue tre fratelli ebrei ungheresi attraverso gli anni tumultuosi della Seconda Guerra Mondiale.'
+      }
+    },
+    {
+      id: 'new6',
+      title: {
+        en: 'The Midnight Library',
+        it: 'La Biblioteca di Mezzanotte'
+      },
+      author: 'Matt Haig',
+      price: 17.90,
+      originalPrice: 19.50,
+      image: 'https://covers.openlibrary.org/b/id/10313767-M.jpg',
+      tags: ['Contemporary', 'Philosophy'],
+      rating: 4.5,
+      reviews: 3245,
+      isNew: true,
+      publishDate: '2024-01',
+      description: {
+        en: 'Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived.',
+        it: 'Tra la vita e la morte c\'è una biblioteca, e all\'interno di quella biblioteca, gli scaffali vanno all\'infinito. Ogni libro offre la possibilità di provare un\'altra vita che avresti potuto vivere.'
+      }
+    }
+  ],
 
   // Real customer reviews
   customerReviews: [
