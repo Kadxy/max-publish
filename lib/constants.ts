@@ -226,6 +226,60 @@ export const TEXTS = {
         en: 'A witty and insightful exploration of modern Italian life through the microcosm of a post office queue, revealing the comedy and drama of everyday existence.',
         it: 'Un\'esplorazione spiritosa e perspicace della vita italiana moderna attraverso il microcosmo di una fila alle poste, rivelando la commedia e il dramma dell\'esistenza quotidiana.'
       }
+    },
+    {
+      id: '9',
+      title: {
+        en: 'The Laughing Woman',
+        it: 'La donna che ride'
+      },
+      author: 'Maurizio de Giovanni',
+      price: 18.50,
+      originalPrice: 20.00,
+      image: '/images/books/book9.jpg',
+      category: 'Mystery',
+      rating: 4.4,
+      reviews: 1876,
+      description: {
+        en: 'A compelling mystery set in Naples, where laughter and sorrow intertwine in an unforgettable tale of human nature and justice.',
+        it: 'Un mistero avvincente ambientato a Napoli, dove risate e dolore si intrecciano in un racconto indimenticabile sulla natura umana e la giustizia.'
+      }
+    },
+    {
+      id: '10',
+      title: {
+        en: 'Italian Stories',
+        it: 'Storie italiane'
+      },
+      author: 'Antonio Tabucchi',
+      price: 16.00,
+      originalPrice: 18.00,
+      image: '/images/books/book10.jpg',
+      category: 'Literary Fiction',
+      rating: 4.6,
+      reviews: 2134,
+      description: {
+        en: 'A collection of evocative stories that capture the essence of contemporary Italy through the eyes of one of its most celebrated writers.',
+        it: 'Una raccolta di storie evocative che catturano l\'essenza dell\'Italia contemporanea attraverso gli occhi di uno dei suoi scrittori più celebrati.'
+      }
+    },
+    {
+      id: '11',
+      title: {
+        en: 'The Secret Garden',
+        it: 'Il giardino segreto'
+      },
+      author: 'Frances Hodgson Burnett',
+      price: 14.50,
+      originalPrice: 16.00,
+      image: '/images/books/book11.jpg',
+      category: 'Children',
+      rating: 4.8,
+      reviews: 3256,
+      description: {
+        en: 'A timeless classic about the transformative power of nature, friendship, and the magic hidden in everyday life.',
+        it: 'Un classico senza tempo sul potere trasformativo della natura, dell\'amicizia e della magia nascosta nella vita quotidiana.'
+      }
     }
   ],
 

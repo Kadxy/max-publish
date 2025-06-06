@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Search, Book, ShoppingCart, User, Menu, X, Star, ChevronRight, Sun, Moon, Monitor } from 'lucide-react'
+import { Search, Book, ShoppingCart, User, Menu, X, Star, ChevronRight, ChevronLeft, Sun, Moon, Monitor } from 'lucide-react'
 import { TEXTS } from '../lib/constants'
 
 export default function Home() {
@@ -9,6 +9,7 @@ export default function Home() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [theme, setTheme] = useState<'light' | 'dark' | 'system'>('system')
     const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false)
+    const [currentBookSlide, setCurrentBookSlide] = useState(0)
 
     const t = (key: any) => {
         return key[language] || key.en
@@ -65,6 +66,18 @@ export default function Home() {
         localStorage.setItem('theme', newTheme)
         applyTheme(newTheme)
         setIsThemeMenuOpen(false)
+    }
+
+    const totalBooks = TEXTS.sampleBooks.length
+    const booksPerView = 5 // Number of books visible at once
+    const maxSlide = Math.max(0, totalBooks - booksPerView) // Maximum slide position
+
+    const nextBookSlide = () => {
+        setCurrentBookSlide((prev) => Math.min(prev + 1, maxSlide))
+    }
+
+    const prevBookSlide = () => {
+        setCurrentBookSlide((prev) => Math.max(prev - 1, 0))
     }
 
     return (
@@ -230,18 +243,18 @@ export default function Home() {
                     </h2>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {[
-                            { key: 'fiction', icon: '📚', color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300' },
-                            { key: 'non_fiction', icon: '🎓', color: 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300' },
-                            { key: 'mystery', icon: '🔍', color: 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300' },
-                            { key: 'romance', icon: '💕', color: 'bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300' },
-                            { key: 'science', icon: '🔬', color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300' },
-                            { key: 'history', icon: '🏛️', color: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300' },
-                            { key: 'children', icon: '🧸', color: 'bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300' },
-                            { key: 'poetry', icon: '✨', color: 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300' }
+                            { key: 'fiction', icon: '📚', color: 'bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200' },
+                            { key: 'non_fiction', icon: '🎓', color: 'bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200' },
+                            { key: 'mystery', icon: '🔍', color: 'bg-red-100 dark:bg-red-900/50 text-red-800 dark:text-red-200' },
+                            { key: 'romance', icon: '💕', color: 'bg-pink-100 dark:bg-pink-900/50 text-pink-800 dark:text-pink-200' },
+                            { key: 'science', icon: '🔬', color: 'bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200' },
+                            { key: 'history', icon: '🏛️', color: 'bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-200' },
+                            { key: 'children', icon: '🧸', color: 'bg-orange-100 dark:bg-orange-900/50 text-orange-800 dark:text-orange-200' },
+                            { key: 'poetry', icon: '✨', color: 'bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-200' }
                         ].map((category) => (
                             <div key={category.key} className="group cursor-pointer">
-                                <div className={`${category.color} rounded-xl p-6 text-center hover:shadow-lg dark:hover:shadow-2xl transition-all duration-300 group-hover:scale-105`}>
-                                    <div className="text-3xl mb-3">{category.icon}</div>
+                                <div className={`${category.color} rounded-xl p-6 text-center hover:shadow-lg dark:hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border border-transparent dark:border-gray-600/30`}>
+                                    <div className="text-3xl mb-3 filter dark:brightness-110 dark:contrast-110">{category.icon}</div>
                                     <h3 className="font-semibold">
                                         {t(TEXTS.categories[category.key as keyof typeof TEXTS.categories])}
                                     </h3>
@@ -255,65 +268,80 @@ export default function Home() {
             {/* Featured Books Section */}
             <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">
-                        {t(TEXTS.featured.title)}
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {TEXTS.sampleBooks.slice(0, 8).map((book) => (
-                            <div key={book.id} className="bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-md dark:hover:shadow-2xl transition-all duration-300 overflow-hidden group flex flex-col h-full">
-                                {/* Book Cover */}
-                                <div className="aspect-[3/4] bg-gray-100 dark:bg-gray-800 overflow-hidden p-2">
-                                    <img
-                                        src={book.image}
-                                        alt={t(book.title)}
-                                        className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-300"
-                                        onError={(e) => {
-                                            const target = e.target as HTMLImageElement;
-                                            target.style.display = 'none';
-                                            target.parentElement!.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 flex items-center justify-center"><svg class="h-16 w-16 text-blue-400 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"></path></svg></div>';
-                                        }}
-                                    />
-                                </div>
-
-                                {/* Book Info */}
-                                <div className="p-6 flex flex-col flex-1">
-                                    <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2 line-clamp-2 min-h-[3.5rem]">
-                                        {t(book.title)}
-                                    </h3>
-                                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">{book.author}</p>
-
-                                    {/* Rating */}
-                                    <div className="flex items-center mb-3">
-                                        <div className="flex items-center">
-                                            {[...Array(5)].map((_, i) => (
-                                                <Star key={i} className={`h-4 w-4 ${i < Math.floor(book.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300 dark:text-gray-600'}`} />
-                                            ))}
+                    <div className="flex items-center justify-between mb-12">
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+                            {t(TEXTS.featured.title)}
+                        </h2>
+                        <div className="flex items-center space-x-2">
+                            <button
+                                onClick={prevBookSlide}
+                                disabled={currentBookSlide === 0}
+                                className="p-2 rounded-full bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                <ChevronLeft className="h-5 w-5" />
+                            </button>
+                            <button
+                                onClick={nextBookSlide}
+                                disabled={currentBookSlide >= maxSlide}
+                                className="p-2 rounded-full bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                <ChevronRight className="h-5 w-5" />
+                            </button>
+                        </div>
+                    </div>
+                    <div className="relative overflow-hidden">
+                        <div
+                            className="flex transition-transform duration-300 ease-in-out"
+                            style={{ transform: `translateX(-${currentBookSlide * (100 / booksPerView)}%)` }}
+                        >
+                            {TEXTS.sampleBooks.map((book) => (
+                                <div key={book.id} className="flex-shrink-0 px-2" style={{ width: `${100 / booksPerView}%` }}>
+                                    <div className="group cursor-pointer">
+                                        {/* Book Cover */}
+                                        <div className="aspect-[2.8/4] bg-white dark:bg-gray-800 rounded-lg p-3 flex items-center justify-center mb-3 hover:shadow-lg dark:hover:shadow-xl transition-all duration-300">
+                                            <img
+                                                src={book.image}
+                                                alt={t(book.title)}
+                                                className="w-full h-full object-contain rounded-sm group-hover:scale-105 transition-transform duration-300"
+                                                onError={(e) => {
+                                                    const target = e.target as HTMLImageElement;
+                                                    target.style.display = 'none';
+                                                    target.parentElement!.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 flex items-center justify-center rounded-sm"><svg class="h-12 w-12 text-blue-400 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"></path></svg></div>';
+                                                }}
+                                            />
                                         </div>
-                                        <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
-                                            {book.rating} ({book.reviews})
-                                        </span>
-                                    </div>
 
-                                    {/* Description - flexible height */}
-                                    <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 line-clamp-3 flex-1">
-                                        {t(book.description)}
-                                    </p>
+                                        {/* Book Info */}
+                                        <div className="space-y-2">
+                                            <h3 className="font-semibold text-sm text-gray-900 dark:text-white line-clamp-2 leading-tight min-h-[2.5rem]">
+                                                {t(book.title)}
+                                            </h3>
+                                            <p className="text-gray-600 dark:text-gray-400 text-xs">di {book.author}</p>
 
-                                    {/* Price and Button - always at bottom */}
-                                    <div className="flex items-center justify-between mt-auto">
-                                        <div className="flex flex-col">
-                                            <span className="text-xl font-bold text-blue-600 dark:text-blue-400">€{book.price}</span>
-                                            {book.originalPrice && (
-                                                <span className="text-sm text-gray-400 dark:text-gray-500 line-through">€{book.originalPrice}</span>
-                                            )}
+                                            {/* Rating */}
+                                            <div className="flex items-center gap-1">
+                                                <div className="flex items-center">
+                                                    {[...Array(5)].map((_, i) => (
+                                                        <Star key={i} className={`h-3 w-3 ${i < Math.floor(book.rating) ? 'text-orange-400 fill-current' : 'text-gray-300 dark:text-gray-600'}`} />
+                                                    ))}
+                                                </div>
+                                                <span className="text-xs text-gray-500 dark:text-gray-400">
+                                                    ({book.reviews})
+                                                </span>
+                                            </div>
+
+                                            {/* Price */}
+                                            <div className="flex items-center gap-2 pt-1">
+                                                <span className="text-base font-bold text-gray-900 dark:text-white">€{book.price}</span>
+                                                {book.originalPrice && (
+                                                    <span className="text-xs text-gray-400 dark:text-gray-500 line-through">€{book.originalPrice}</span>
+                                                )}
+                                            </div>
                                         </div>
-                                        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium">
-                                            {language === 'en' ? 'Add to Cart' : 'Aggiungi'}
-                                        </button>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
@@ -359,7 +387,7 @@ export default function Home() {
 
 
             {/* Newsletter Section */}
-            <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-700 dark:to-blue-800 transition-colors">
+            <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-gray-800 dark:to-gray-900 transition-colors">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl font-bold text-white dark:text-gray-100 mb-4">
                         {language === 'en' ? 'Stay Updated with New Releases' : 'Rimani Aggiornato con le Nuove Uscite'}
