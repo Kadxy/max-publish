@@ -4,12 +4,15 @@ A modern, bilingual (English/Italian) online bookstore built with Next.js and Ta
 
 ## Features
 
-- 🌐 Bilingual support (English/Italian)
-- 📚 Modern, responsive design
-- 🛒 Book catalog with categories
-- 📱 Mobile-friendly interface
-- ⚡ Fast static site generation
-- 🚀 Ready for Vercel deployment
+- 🌐 **Bilingual support** (English/Italian) with real-time language switching
+- 🌙 **Dark/Light mode** with system preference detection
+- 📚 **Modern, responsive design** inspired by top Italian bookstores
+- 🛒 **Enhanced book catalog** with ratings, reviews, and 8 books showcase
+- 👥 **Featured authors section** with author profiles
+- ⭐ **Customer reviews** with star ratings
+- 📱 **Mobile-first interface** with touch-friendly navigation
+- ⚡ **Fast static site generation** optimized for performance
+- 🚀 **Ready for Vercel deployment** with one-click setup
 
 ## Company Information
 
@@ -95,14 +98,23 @@ book-web/
 - **Lucide React** - Beautiful icons
 - **Vercel** - Deployment platform
 
-## Languages
+## Languages & Themes
 
+### Language Support
 The website supports two languages:
 
 - **English** (EN)
 - **Italian** (IT)
 
 Language switching is available in the header. All text content is stored in `lib/constants.ts` for easy management.
+
+### Theme Support
+Three theme modes are available:
+- **Light mode** - Classic bright interface
+- **Dark mode** - Modern dark interface for better night reading
+- **System mode** - Automatically adapts to device preference
+
+Theme switching is available in the header next to language options. The selected theme is saved in localStorage.
 
 ## Customization
 
