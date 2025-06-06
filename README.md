@@ -3,6 +3,20 @@
 A modern, bilingual (English/Italian) online bookstore built with Next.js and
 Tailwind CSS.
 
+## Screenshots
+
+### Homepage - Light Mode
+
+![Homepage Light Mode](public/images/screenshots/homepage-light.jpeg)
+
+### Homepage - Dark Mode
+
+![Homepage Dark Mode](public/images/screenshots/homepage-dark.jpeg)
+
+### Featured Books Section
+
+![Featured Books Section](public/images/screenshots/books-section.jpeg)
+
 ## Features
 
 - 🌐 **Bilingual support** (English/Italian) with real-time language switching
