@@ -81,161 +81,185 @@ export const TEXTS = {
     subtitle: { en: 'Trusted by thousands of book lovers', it: 'Di fiducia per migliaia di amanti dei libri' }
   },
 
-  // Books data with real bestselling books
+  // Books data with real books from user's images
   sampleBooks: [
     {
       id: '1',
-      title: 'L\'amica geniale',
-      author: 'Elena Ferrante',
-      price: 16.50,
-      originalPrice: 18.00,
-      image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop',
-      category: 'Fiction',
-      rating: 4.8,
-      reviews: 15420,
+      title: {
+        en: 'New Beginnings at Strawberry Patch Pancake House',
+        it: 'Nuovi inizi a Strawberry Patch Pancake House'
+      },
+      author: 'Laurie Gilmore',
+      price: 16.90,
+      originalPrice: 18.50,
+      image: '/book-covers/strawberry-patch.jpg',
+      category: 'Romance',
+      rating: 4.6,
+      reviews: 2340,
       description: {
-        en: 'The captivating first novel in Elena Ferrante\'s Neapolitan Novels quartet, exploring the intense friendship between Elena and Lila growing up in 1950s Naples.',
-        it: 'Il primo romanzo della celebre tetralogia di Elena Ferrante sui Romanzi Napoletani, che esplora l\'intensa amicizia tra Elena e Lila nella Napoli degli anni \'50.'
+        en: 'A heartwarming romance set in a charming small town pancake house, where new beginnings bloom with every sunrise and love finds its way through homemade syrup and fresh starts.',
+        it: 'Un romanzo commovente ambientato in una graziosa casa di pancake di provincia, dove nuovi inizi sbocciano ad ogni alba e l\'amore trova la sua strada attraverso sciroppo fatto in casa e nuovi inizi.'
       }
     },
     {
       id: '2',
-      title: 'La vita intima',
-      author: 'Niccolò Ammaniti',
-      price: 19.50,
-      originalPrice: 22.00,
-      image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=400&fit=crop',
-      category: 'Contemporary Fiction',
-      rating: 4.6,
-      reviews: 3280,
+      title: {
+        en: 'The Dark Immensity of Death',
+        it: 'L\'oscura immensità della morte'
+      },
+      author: 'Massimo Carlotto',
+      price: 18.50,
+      originalPrice: 20.00,
+      image: '/book-covers/oscura-immensita.jpg',
+      category: 'Mystery',
+      rating: 4.4,
+      reviews: 1820,
       description: {
-        en: 'Winner of the 2023 Viareggio Prize, this novel follows Maria Cristina Palma as a video from her past threatens to unravel her perfect life.',
-        it: 'Vincitore del Premio Viareggio 2023, questo romanzo segue Maria Cristina Palma mentre un video del suo passato minaccia di distruggere la sua vita perfetta.'
+        en: 'A gripping noir thriller from the master of Italian crime fiction, exploring the darkest corners of human nature and the relentless pursuit of justice.',
+        it: 'Un avvincente thriller noir dal maestro del giallo italiano, che esplora gli angoli più oscuri della natura umana e l\'implacabile ricerca della giustizia.'
       }
     },
     {
       id: '3',
-      title: 'Il ladro gentiluomo',
-      author: 'Alessia Gazzola',
-      price: 14.90,
-      originalPrice: 16.50,
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop',
-      category: 'Mystery',
-      rating: 4.5,
-      reviews: 8760,
+      title: {
+        en: 'The Swallow\'s Talent',
+        it: 'Il talento della rondine'
+      },
+      author: 'Matteo Bussola',
+      price: 17.50,
+      originalPrice: 19.00,
+      image: '/book-covers/talento-rondine.jpg',
+      category: 'Contemporary Fiction',
+      rating: 4.7,
+      reviews: 3245,
       description: {
-        en: 'Winner of the 2019 Premio Bancarella, this mystery novel from the beloved L\'allieva series combines crime fiction with romance.',
-        it: 'Vincitore del Premio Bancarella 2019, questo romanzo giallo della serie L\'allieva combina il giallo con il romance.'
+        en: 'A poignant meditation on fatherhood, love, and the profound connections that shape our lives, told with Bussola\'s signature emotional depth.',
+        it: 'Una meditazione toccante sulla paternità, l\'amore e le profonde connessioni che plasmano le nostre vite, raccontata con la caratteristica profondità emotiva di Bussola.'
       }
     },
     {
       id: '4',
-      title: 'La solitudine dei numeri primi',
-      author: 'Paolo Giordano',
-      price: 12.50,
-      originalPrice: 15.00,
-      image: 'https://images.unsplash.com/photo-1495640388908-05fa85288e61?w=300&h=400&fit=crop',
-      category: 'Literary Fiction',
-      rating: 4.7,
-      reviews: 12340,
+      title: {
+        en: 'Beautiful and Lost',
+        it: 'Bella e perduta'
+      },
+      author: 'Paolo Rumiz',
+      price: 19.50,
+      originalPrice: 21.00,
+      image: '/book-covers/bella-perduta.jpg',
+      category: 'Travel',
+      rating: 4.6,
+      reviews: 1567,
       description: {
-        en: 'The Strega Prize-winning debut that became an international phenomenon, exploring the parallel lives of two wounded souls.',
-        it: 'Il romanzo d\'esordio vincitore del Premio Strega che è diventato un fenomeno internazionale, esplorando le vite parallele di due anime ferite.'
+        en: 'A journey through Garibaldi\'s Italy, exploring the forgotten corners of the Risorgimento with Rumiz\'s masterful storytelling and keen historical insight.',
+        it: 'Un viaggio attraverso l\'Italia garibaldina, esplorando gli angoli dimenticati del Risorgimento con la magistrale narrativa di Rumiz e la sua acuta visione storica.'
       }
     },
     {
       id: '5',
-      title: 'Gomorra',
-      author: 'Roberto Saviano',
-      price: 13.50,
-      originalPrice: 15.50,
-      image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300&h=400&fit=crop',
-      category: 'Non-fiction',
-      rating: 4.6,
-      reviews: 9850,
+      title: {
+        en: 'Never Flinch',
+        it: 'Never Flinch'
+      },
+      author: 'Stephen King',
+      price: 22.50,
+      originalPrice: 25.00,
+      image: '/book-covers/never-flinch.jpg',
+      category: 'Horror',
+      rating: 4.8,
+      reviews: 4521,
       description: {
-        en: 'The groundbreaking exposé of the Neapolitan mafia that sold over 10 million copies worldwide and inspired films and TV series.',
-        it: 'L\'esposizione rivoluzionaria della mafia napoletana che ha venduto oltre 10 milioni di copie in tutto il mondo e ha ispirato film e serie TV.'
+        en: 'A harrowing tale of survival and moral courage, where ordinary people face extraordinary evil and must choose between safety and doing what\'s right.',
+        it: 'Un racconto straziante di sopravvivenza e coraggio morale, dove persone comuni affrontano il male straordinario e devono scegliere tra sicurezza e fare ciò che è giusto.'
       }
     },
     {
       id: '6',
-      title: 'I leoni di Sicilia',
-      author: 'Stefania Auci',
-      price: 18.50,
-      originalPrice: 20.00,
-      image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=400&fit=crop',
-      category: 'Historical Fiction',
-      rating: 4.7,
-      reviews: 11200,
+      title: {
+        en: 'My Name is Valley Leaf',
+        it: 'Il mio nome è Foglia del Valle'
+      },
+      author: 'Isabel Allende',
+      price: 20.00,
+      originalPrice: 22.50,
+      image: '/book-covers/foglia-valle.jpg',
+      category: 'Literary Fiction',
+      rating: 4.5,
+      reviews: 2876,
       description: {
-        en: 'The bestselling saga of the Florio family that sold over 1.5 million copies in Italy and became a Disney+ series.',
-        it: 'La saga bestseller della famiglia Florio che ha venduto oltre 1,5 milioni di copie in Italia ed è diventata una serie Disney+.'
+        en: 'Allende\'s magical realism shines in this story of identity, belonging, and the power of names to shape our destiny across generations.',
+        it: 'Il realismo magico di Allende brilla in questa storia di identità, appartenenza e il potere dei nomi di plasmare il nostro destino attraverso le generazioni.'
       }
     },
     {
       id: '7',
-      title: 'La lunga vita di Marianna Ucrìa',
-      author: 'Dacia Maraini',
-      price: 15.90,
-      originalPrice: 17.50,
-      image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=400&fit=crop',
-      category: 'Historical Fiction',
-      rating: 4.5,
-      reviews: 7890,
+      title: {
+        en: 'The Mute Parrot',
+        it: 'Il pappagallo muto'
+      },
+      author: 'Maurizio de Giovanni',
+      price: 16.50,
+      originalPrice: 18.00,
+      image: '/book-covers/pappagallo-muto.jpg',
+      category: 'Mystery',
+      rating: 4.3,
+      reviews: 1934,
       description: {
-        en: 'Premio Campiello winner, this powerful novel tells the story of a deaf-mute Sicilian woman in 18th-century aristocratic society.',
-        it: 'Vincitore del Premio Campiello, questo potente romanzo racconta la storia di una donna siciliana sordomuta nella società aristocratica del XVIII secolo.'
+        en: 'A captivating mystery featuring Sara, where silence speaks louder than words and the truth hides behind unexpected facades.',
+        it: 'Un mistero avvincente con protagonista Sara, dove il silenzio parla più forte delle parole e la verità si nasconde dietro facciate inaspettate.'
       }
     },
     {
       id: '8',
-      title: 'Seta',
-      author: 'Alessandro Baricco',
-      price: 11.50,
-      originalPrice: 13.00,
-      image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop',
-      category: 'Literary Fiction',
-      rating: 4.4,
-      reviews: 6540,
+      title: {
+        en: 'The Post Office Queue',
+        it: 'La fila alle poste'
+      },
+      author: 'Chiara Valerio',
+      price: 17.00,
+      originalPrice: 19.50,
+      image: '/book-covers/fila-poste.jpg',
+      category: 'Contemporary Fiction',
+      rating: 4.2,
+      reviews: 1245,
       description: {
-        en: 'The international bestseller about a French silkworm merchant\'s journey to Japan, a tale of love, travel, and transformation.',
-        it: 'Il bestseller internazionale sul viaggio di un commerciante francese di bachi da seta in Giappone, una storia di amore, viaggio e trasformazione.'
+        en: 'A witty and insightful exploration of modern Italian life through the microcosm of a post office queue, revealing the comedy and drama of everyday existence.',
+        it: 'Un\'esplorazione spiritosa e perspicace della vita italiana moderna attraverso il microcosmo di una fila alle poste, rivelando la commedia e il dramma dell\'esistenza quotidiana.'
       }
     }
   ],
 
-  // Featured Authors with real Italian authors
+  // Real featured authors using real Italian writers from the books
   featuredAuthors: [
     {
       id: '1',
-      name: 'Elena Ferrante',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616c6d77132?w=150&h=150&fit=crop&crop=face',
+      name: 'Matteo Bussola',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&face',
       bio: {
-        en: 'Pseudonymous Italian novelist, author of the internationally acclaimed Neapolitan Novels quartet. Time magazine named her one of the 100 most influential people in 2016.',
-        it: 'Scrittrice italiana pseudonima, autrice della acclamata tetralogia dei Romanzi Napoletani. La rivista Time l\'ha nominata una delle 100 persone più influenti nel 2016.'
+        en: 'Matteo Bussola is a bestselling Italian author whose Facebook posts on his family\'s adventures have gone viral. He is an architect turned cartoonist who lives in Verona with his wife and three daughters.',
+        it: 'Matteo Bussola è un autore italiano bestseller i cui post di Facebook sulle avventure della sua famiglia sono diventati virali. È un architetto diventato fumettista che vive a Verona con sua moglie e tre figlie.'
       },
-      books: 15
+      books: ['Il talento della rondine', 'Notti in bianco, baci a colazione', 'Rossovermiglio']
     },
     {
-      id: '2', 
-      name: 'Paolo Giordano',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+      id: '2',
+      name: 'Paolo Rumiz',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&face',
       bio: {
-        en: 'Physicist, novelist, and journalist from Turin. His debut novel "The Solitude of Prime Numbers" won the Strega Prize and became a worldwide phenomenon.',
-        it: 'Fisico, romanziere e giornalista di Torino. Il suo romanzo d\'esordio "La solitudine dei numeri primi" ha vinto il Premio Strega ed è diventato un fenomeno mondiale.'
+        en: 'Paolo Rumiz is an Italian journalist and writer born in Trieste. A special correspondent and editorialist for La Repubblica, he has covered the Balkans extensively and won the Hemingway Prize for his work on Bosnia.',
+        it: 'Paolo Rumiz è un giornalista e scrittore italiano nato a Trieste. Inviato speciale ed editorialista de La Repubblica, ha coperto ampiamente i Balcani e ha vinto il Premio Hemingway per il suo lavoro sulla Bosnia.'
       },
-      books: 8
+      books: ['Bella e perduta', 'Il filo infinito', 'Canto per Europa']
     },
     {
       id: '3',
-      name: 'Roberto Saviano', 
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+      name: 'Massimo Carlotto',
+      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&face',
       bio: {
-        en: 'Investigative journalist and writer known for his exposés of organized crime. His book "Gomorrah" became a global phenomenon and inspired films and TV series.',
-        it: 'Giornalista investigativo e scrittore noto per le sue denunce del crimine organizzato. Il suo libro "Gomorra" è diventato un fenomeno globale e ha ispirato film e serie TV.'
+        en: 'Massimo Carlotto is one of Italy\'s most popular crime writers. Known for his gritty, realistic portrayals of contemporary Italian society, his works often explore themes of justice and corruption.',
+        it: 'Massimo Carlotto è uno dei più popolari scrittori di gialli d\'Italia. Conosciuto per le sue rappresentazioni crude e realistiche della società italiana contemporanea, le sue opere esplorano spesso temi di giustizia e corruzione.'
       },
-      books: 12
+      books: ['L\'oscura immensità della morte', 'Arrivederci amore, ciao', 'La verità dell\'Alligatore']
     }
   ],
 
