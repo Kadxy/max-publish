@@ -92,7 +92,7 @@ export const TEXTS = {
       author: 'Laurie Gilmore',
       price: 16.90,
       originalPrice: 18.50,
-      image: '/book-covers/strawberry-patch.jpg',
+      image: '/images/books/book1.jpg',
       category: 'Romance',
       rating: 4.6,
       reviews: 2340,
@@ -110,7 +110,7 @@ export const TEXTS = {
       author: 'Massimo Carlotto',
       price: 18.50,
       originalPrice: 20.00,
-      image: '/book-covers/oscura-immensita.jpg',
+      image: '/images/books/book2.jpg',
       category: 'Mystery',
       rating: 4.4,
       reviews: 1820,
@@ -128,7 +128,7 @@ export const TEXTS = {
       author: 'Matteo Bussola',
       price: 17.50,
       originalPrice: 19.00,
-      image: '/book-covers/talento-rondine.jpg',
+      image: '/images/books/book3.jpg',
       category: 'Contemporary Fiction',
       rating: 4.7,
       reviews: 3245,
@@ -146,7 +146,7 @@ export const TEXTS = {
       author: 'Paolo Rumiz',
       price: 19.50,
       originalPrice: 21.00,
-      image: '/book-covers/bella-perduta.jpg',
+      image: '/images/books/book4.jpg',
       category: 'Travel',
       rating: 4.6,
       reviews: 1567,
@@ -164,7 +164,7 @@ export const TEXTS = {
       author: 'Stephen King',
       price: 22.50,
       originalPrice: 25.00,
-      image: '/book-covers/never-flinch.jpg',
+      image: '/images/books/book5.jpg',
       category: 'Horror',
       rating: 4.8,
       reviews: 4521,
@@ -182,7 +182,7 @@ export const TEXTS = {
       author: 'Isabel Allende',
       price: 20.00,
       originalPrice: 22.50,
-      image: '/book-covers/foglia-valle.jpg',
+      image: '/images/books/book6.jpg',
       category: 'Literary Fiction',
       rating: 4.5,
       reviews: 2876,
@@ -200,7 +200,7 @@ export const TEXTS = {
       author: 'Maurizio de Giovanni',
       price: 16.50,
       originalPrice: 18.00,
-      image: '/book-covers/pappagallo-muto.jpg',
+      image: '/images/books/book7.jpg',
       category: 'Mystery',
       rating: 4.3,
       reviews: 1934,
@@ -218,7 +218,7 @@ export const TEXTS = {
       author: 'Chiara Valerio',
       price: 17.00,
       originalPrice: 19.50,
-      image: '/book-covers/fila-poste.jpg',
+      image: '/images/books/book8.jpg',
       category: 'Contemporary Fiction',
       rating: 4.2,
       reviews: 1245,
@@ -234,7 +234,7 @@ export const TEXTS = {
     {
       id: '1',
       name: 'Matteo Bussola',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&face',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
       bio: {
         en: 'Matteo Bussola is a bestselling Italian author whose Facebook posts on his family\'s adventures have gone viral. He is an architect turned cartoonist who lives in Verona with his wife and three daughters.',
         it: 'Matteo Bussola è un autore italiano bestseller i cui post di Facebook sulle avventure della sua famiglia sono diventati virali. È un architetto diventato fumettista che vive a Verona con sua moglie e tre figlie.'
@@ -244,7 +244,7 @@ export const TEXTS = {
     {
       id: '2',
       name: 'Paolo Rumiz',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&face',
+      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face',
       bio: {
         en: 'Paolo Rumiz is an Italian journalist and writer born in Trieste. A special correspondent and editorialist for La Repubblica, he has covered the Balkans extensively and won the Hemingway Prize for his work on Bosnia.',
         it: 'Paolo Rumiz è un giornalista e scrittore italiano nato a Trieste. Inviato speciale ed editorialista de La Repubblica, ha coperto ampiamente i Balcani e ha vinto il Premio Hemingway per il suo lavoro sulla Bosnia.'
@@ -254,7 +254,7 @@ export const TEXTS = {
     {
       id: '3',
       name: 'Massimo Carlotto',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&face',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
       bio: {
         en: 'Massimo Carlotto is one of Italy\'s most popular crime writers. Known for his gritty, realistic portrayals of contemporary Italian society, his works often explore themes of justice and corruption.',
         it: 'Massimo Carlotto è uno dei più popolari scrittori di gialli d\'Italia. Conosciuto per le sue rappresentazioni crude e realistiche della società italiana contemporanea, le sue opere esplorano spesso temi di giustizia e corruzione.'
