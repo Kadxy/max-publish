@@ -69,11 +69,7 @@ export const TEXTS = {
     system: { en: 'System', it: 'Sistema' }
   },
 
-  // Authors Section
-  authors: {
-    title: { en: 'Featured Authors', it: 'Autori in Evidenza' },
-    subtitle: { en: 'Meet our celebrated writers', it: 'Incontra i nostri scrittori celebrati' }
-  },
+
 
   // Reviews Section
   reviews: {
@@ -283,39 +279,7 @@ export const TEXTS = {
     }
   ],
 
-  // Real featured authors using real Italian writers from the books
-  featuredAuthors: [
-    {
-      id: '1',
-      name: 'Matteo Bussola',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-      bio: {
-        en: 'Matteo Bussola is a bestselling Italian author whose Facebook posts on his family\'s adventures have gone viral. He is an architect turned cartoonist who lives in Verona with his wife and three daughters.',
-        it: 'Matteo Bussola è un autore italiano bestseller i cui post di Facebook sulle avventure della sua famiglia sono diventati virali. È un architetto diventato fumettista che vive a Verona con sua moglie e tre figlie.'
-      },
-      books: ['Il talento della rondine', 'Notti in bianco, baci a colazione', 'Rossovermiglio']
-    },
-    {
-      id: '2',
-      name: 'Paolo Rumiz',
-      image: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400&h=400&fit=crop&crop=face',
-      bio: {
-        en: 'Paolo Rumiz is an Italian journalist and writer born in Trieste. A special correspondent and editorialist for La Repubblica, he has covered the Balkans extensively and won the Hemingway Prize for his work on Bosnia.',
-        it: 'Paolo Rumiz è un giornalista e scrittore italiano nato a Trieste. Inviato speciale ed editorialista de La Repubblica, ha coperto ampiamente i Balcani e ha vinto il Premio Hemingway per il suo lavoro sulla Bosnia.'
-      },
-      books: ['Bella e perduta', 'Il filo infinito', 'Canto per Europa']
-    },
-    {
-      id: '3',
-      name: 'Massimo Carlotto',
-      image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face',
-      bio: {
-        en: 'Massimo Carlotto is one of Italy\'s most popular crime writers. Known for his gritty, realistic portrayals of contemporary Italian society, his works often explore themes of justice and corruption.',
-        it: 'Massimo Carlotto è uno dei più popolari scrittori di gialli d\'Italia. Conosciuto per le sue rappresentazioni crude e realistiche della società italiana contemporanea, le sue opere esplorano spesso temi di giustizia e corruzione.'
-      },
-      books: ['L\'oscura immensità della morte', 'Arrivederci amore, ciao', 'La verità dell\'Alligatore']
-    }
-  ],
+
 
   // Real customer reviews
   customerReviews: [
