@@ -88,7 +88,8 @@ export const TEXTS = {
   featured: {
     title: { en: 'Featured Books', it: 'Libri in Evidenza' },
     bestsellers_title: { en: 'Current Bestsellers', it: 'Bestseller Attuali' },
-    new_releases_title: { en: 'New Releases', it: 'Nuove Uscite' }
+    new_releases_title: { en: 'New Releases', it: 'Nuove Uscite' },
+    view_all: { en: 'View All Books', it: 'Vedi Tutti i Libri' }
   },
 
   // New Arrivals
@@ -98,6 +99,17 @@ export const TEXTS = {
     view_all: { en: 'View All New Books', it: 'Vedi Tutti i Nuovi Libri' },
     just_arrived: { en: 'Just Arrived', it: 'Appena Arrivato' },
     pre_order: { en: 'Pre-order', it: 'Pre-ordina' }
+  },
+
+  // Newsletter
+  newsletter: {
+    title: { en: 'Stay Updated', it: 'Rimani Aggiornato' },
+    subtitle: { en: 'Subscribe to our newsletter and get the latest book recommendations, exclusive offers, and literary news delivered to your inbox.', it: 'Iscriviti alla nostra newsletter e ricevi le ultime raccomandazioni sui libri, offerte esclusive e notizie letterarie direttamente nella tua casella di posta.' },
+    email_placeholder: { en: 'Enter your email address', it: 'Inserisci il tuo indirizzo email' },
+    subscribe_button: { en: 'Subscribe', it: 'Iscriviti' },
+    subscribing: { en: 'Subscribing...', it: 'Iscrizione in corso...' },
+    success_title: { en: 'Successfully Subscribed!', it: 'Iscrizione Completata!' },
+    success_message: { en: 'Thank you for subscribing to our newsletter. You\'ll receive our latest updates soon.', it: 'Grazie per esserti iscritto alla nostra newsletter. Riceverai presto i nostri ultimi aggiornamenti.' }
   },
   
   // Footer
@@ -137,6 +149,15 @@ export const TEXTS = {
   reviews: {
     title: { en: 'What Our Readers Say', it: 'Cosa Dicono i Nostri Lettori' },
     subtitle: { en: 'Trusted by thousands of book lovers', it: 'Di fiducia per migliaia di amanti dei libri' }
+  },
+
+  // Common UI texts
+  ui: {
+    add_to_cart: { en: 'Add to cart', it: 'Aggiungi al carrello' },
+    added: { en: 'Added!', it: 'Aggiunto!' },
+    bestseller: { en: 'Bestseller', it: 'Bestseller' },
+    new: { en: 'New', it: 'Nuovo' },
+    by_author: { en: 'by', it: 'di' }
   },
 
   // Books data with real books from OpenLibrary

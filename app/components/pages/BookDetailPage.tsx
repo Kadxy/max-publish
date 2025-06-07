@@ -218,7 +218,7 @@ export default function BookDetailPage({ bookId, onBack, onNavigate, onAddToCart
                                 className="flex-1 flex items-center justify-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
                             >
                                 <ShoppingCart className="h-5 w-5" />
-                                <span>Add to Cart</span>
+                                <span>{t(TEXTS.ui.add_to_cart)}</span>
                             </button>
                         </div>
 

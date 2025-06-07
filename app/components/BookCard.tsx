@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Star, ShoppingCart, Heart } from 'lucide-react'
 import { Book } from '../types'
 import { useLanguage } from '../hooks/useLanguage'
+import { TEXTS } from '../../lib/constants'
 
 type BookCardProps = {
     book: Book
@@ -61,7 +62,7 @@ export default function BookCard({ book, onBookClick, onAddToCart }: BookCardPro
             {/* Success feedback */}
             {showAdded && (
                 <div className="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full z-10 animate-bounce">
-                    Added!
+                    {t(TEXTS.ui.added)}
                 </div>
             )}
             <div
@@ -92,14 +93,14 @@ export default function BookCard({ book, onBookClick, onAddToCart }: BookCardPro
                     {book.isBestseller && (
                         <div className="absolute top-2 left-2">
                             <span className="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded">
-                                Bestseller
+                                {t(TEXTS.ui.bestseller)}
                             </span>
                         </div>
                     )}
                     {book.isNew && (
                         <div className="absolute top-2 left-2">
                             <span className="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">
-                                New
+                                {t(TEXTS.ui.new)}
                             </span>
                         </div>
                     )}
@@ -109,7 +110,7 @@ export default function BookCard({ book, onBookClick, onAddToCart }: BookCardPro
                         {t(book.title)}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 text-sm mb-2">
-                        by {book.author}
+                        {t(TEXTS.ui.by_author)} {book.author}
                     </p>
                     <div className="flex items-center mb-2">
                         <div className="flex items-center">
@@ -134,7 +135,7 @@ export default function BookCard({ book, onBookClick, onAddToCart }: BookCardPro
                         <button
                             onClick={handleAddToCart}
                             className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg transition-colors"
-                            title="Add to cart"
+                            title={t(TEXTS.ui.add_to_cart)}
                         >
                             <ShoppingCart className="h-4 w-4" />
                         </button>
