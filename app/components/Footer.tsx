@@ -20,7 +20,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-400 max-w-md">
+                    <p className="text-gray-400 max-w-2xl">
                         {t(TEXTS.footer.company_desc)}
                     </p>
 
