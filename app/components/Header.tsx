@@ -7,9 +7,10 @@ import { TEXTS } from '../../lib/constants'
 type HeaderProps = {
     onNavigate: (section: string) => void
     currentSection: string
+    cartItemCount?: number
 }
 
-export default function Header({ onNavigate, currentSection }: HeaderProps) {
+export default function Header({ onNavigate, currentSection, cartItemCount = 0 }: HeaderProps) {
     const { language, changeLanguage, t } = useLanguage()
     const { theme, changeTheme } = useTheme()
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -61,8 +62,8 @@ export default function Header({ onNavigate, currentSection }: HeaderProps) {
                                 key={item.id}
                                 onClick={() => handleNavigation(item.id)}
                                 className={`transition-colors whitespace-nowrap px-3 py-2 rounded-md ${currentSection === item.id
-                                        ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                                        : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                                     }`}
                             >
                                 {t(item.label)}
@@ -77,8 +78,8 @@ export default function Header({ onNavigate, currentSection }: HeaderProps) {
                             <button
                                 onClick={() => changeLanguage('en')}
                                 className={`px-3 py-1 text-sm rounded-md transition-colors ${language === 'en'
-                                        ? 'bg-blue-600 text-white shadow-sm'
-                                        : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-700'
+                                    ? 'bg-blue-600 text-white shadow-sm'
+                                    : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-700'
                                     }`}
                             >
                                 EN
@@ -86,8 +87,8 @@ export default function Header({ onNavigate, currentSection }: HeaderProps) {
                             <button
                                 onClick={() => changeLanguage('it')}
                                 className={`px-3 py-1 text-sm rounded-md transition-colors ${language === 'it'
-                                        ? 'bg-blue-600 text-white shadow-sm'
-                                        : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-700'
+                                    ? 'bg-blue-600 text-white shadow-sm'
+                                    : 'text-gray-600 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-700'
                                     }`}
                             >
                                 IT
@@ -111,8 +112,8 @@ export default function Header({ onNavigate, currentSection }: HeaderProps) {
                                     <button
                                         onClick={() => changeTheme('light')}
                                         className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 transition-colors ${theme === 'light'
-                                                ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                                                : 'text-gray-700 dark:text-gray-300'
+                                            ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                                            : 'text-gray-700 dark:text-gray-300'
                                             }`}
                                     >
                                         <Sun className="h-4 w-4" />
@@ -121,8 +122,8 @@ export default function Header({ onNavigate, currentSection }: HeaderProps) {
                                     <button
                                         onClick={() => changeTheme('dark')}
                                         className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 transition-colors ${theme === 'dark'
-                                                ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                                                : 'text-gray-700 dark:text-gray-300'
+                                            ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                                            : 'text-gray-700 dark:text-gray-300'
                                             }`}
                                     >
                                         <Moon className="h-4 w-4" />
@@ -131,8 +132,8 @@ export default function Header({ onNavigate, currentSection }: HeaderProps) {
                                     <button
                                         onClick={() => changeTheme('system')}
                                         className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 transition-colors ${theme === 'system'
-                                                ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                                                : 'text-gray-700 dark:text-gray-300'
+                                            ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                                            : 'text-gray-700 dark:text-gray-300'
                                             }`}
                                     >
                                         <Monitor className="h-4 w-4" />
@@ -163,10 +164,15 @@ export default function Header({ onNavigate, currentSection }: HeaderProps) {
                         <div className="flex items-center space-x-2">
                             <button
                                 onClick={() => handleNavigation('cart')}
-                                className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative"
                                 title="Shopping Cart"
                             >
                                 <ShoppingCart className="h-5 w-5" />
+                                {cartItemCount > 0 && (
+                                    <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">
+                                        {cartItemCount > 99 ? '99+' : cartItemCount}
+                                    </span>
+                                )}
                             </button>
                             <button
                                 onClick={() => handleNavigation('profile')}
@@ -214,8 +220,8 @@ export default function Header({ onNavigate, currentSection }: HeaderProps) {
                                     key={item.id}
                                     onClick={() => handleNavigation(item.id)}
                                     className={`w-full text-left px-4 py-2 rounded-md transition-colors ${currentSection === item.id
-                                            ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                                            : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                                        ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                                        : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                                         }`}
                                 >
                                     {t(item.label)}

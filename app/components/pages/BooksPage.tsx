@@ -1,8 +1,9 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { Filter, Grid, List, ChevronDown } from 'lucide-react'
 import { useLanguage } from '../../hooks/useLanguage'
-import { TEXTS } from '../../../lib/constants'
+import { TEXTS, fetchBooksFromOpenLibrary } from '../../../lib/constants'
 import BookCard from '../BookCard'
+import { Book } from '../../types'
 
 type BooksPageProps = {
     onBookClick: (bookId: string) => void
@@ -16,6 +17,7 @@ export default function BooksPage({ onBookClick, onAddToCart }: BooksPageProps) 
     const [filterCategory, setFilterCategory] = useState<string>('all')
     const [minPrice, setMinPrice] = useState<number>(0)
     const [maxPrice, setMaxPrice] = useState<number>(100)
+    const [loading, setLoading] = useState(false)
 
     const books = TEXTS.sampleBooks
     const categories = Array.from(new Set(books.map(book => book.category)))

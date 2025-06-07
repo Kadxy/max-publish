@@ -8,9 +8,10 @@ type BookDetailPageProps = {
     bookId: string
     onBack: () => void
     onNavigate: (section: string) => void
+    onAddToCart?: (book: Book) => void
 }
 
-export default function BookDetailPage({ bookId, onBack, onNavigate }: BookDetailPageProps) {
+export default function BookDetailPage({ bookId, onBack, onNavigate, onAddToCart }: BookDetailPageProps) {
     const { t } = useLanguage()
     const [quantity, setQuantity] = useState(1)
     const [isWishlisted, setIsWishlisted] = useState(false)
@@ -71,9 +72,13 @@ export default function BookDetailPage({ bookId, onBack, onNavigate }: BookDetai
     }
 
     const handleAddToCart = () => {
+        if (onAddToCart && book) {
+            for (let i = 0; i < quantity; i++) {
+                onAddToCart(book)
+            }
+        }
         setShowAddedToCart(true)
         setTimeout(() => setShowAddedToCart(false), 3000)
-        // Here you would normally add the book to cart
         console.log(`Adding ${quantity} copies of "${t(book.title)}" to cart`)
     }
 

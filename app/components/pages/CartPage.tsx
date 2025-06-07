@@ -14,28 +14,25 @@ type CartItem = {
 
 type CartPageProps = {
     onNavigate: (section: string) => void
+    cartItems?: CartItem[]
+    onUpdateCart?: (items: CartItem[]) => void
 }
 
-export default function CartPage({ onNavigate }: CartPageProps) {
+export default function CartPage({ onNavigate, cartItems = [], onUpdateCart }: CartPageProps) {
     const { t } = useLanguage()
-    const [cartItems, setCartItems] = useState<CartItem[]>([])
+    const [localCartItems, setLocalCartItems] = useState<CartItem[]>(cartItems)
 
-    // Load cart from localStorage on component mount
+    // Update local state when props change
     useEffect(() => {
-        const savedCart = localStorage.getItem('bookstore_cart')
-        if (savedCart) {
-            try {
-                setCartItems(JSON.parse(savedCart))
-            } catch (error) {
-                console.error('Error loading cart:', error)
-            }
-        }
-    }, [])
-
-    // Save cart to localStorage whenever cartItems changes
-    useEffect(() => {
-        localStorage.setItem('bookstore_cart', JSON.stringify(cartItems))
+        setLocalCartItems(cartItems)
     }, [cartItems])
+
+    // Save cart to localStorage and notify parent whenever local cart changes
+    useEffect(() => {
+        if (onUpdateCart) {
+            onUpdateCart(localCartItems)
+        }
+    }, [localCartItems, onUpdateCart])
 
     const updateQuantity = (id: string, newQuantity: number) => {
         if (newQuantity <= 0) {
@@ -43,7 +40,7 @@ export default function CartPage({ onNavigate }: CartPageProps) {
             return
         }
 
-        setCartItems(items =>
+        setLocalCartItems(items =>
             items.map(item =>
                 item.id === id ? { ...item, quantity: newQuantity } : item
             )
@@ -51,21 +48,21 @@ export default function CartPage({ onNavigate }: CartPageProps) {
     }
 
     const removeItem = (id: string) => {
-        setCartItems(items => items.filter(item => item.id !== id))
+        setLocalCartItems(items => items.filter(item => item.id !== id))
     }
 
     const clearCart = () => {
-        setCartItems([])
+        setLocalCartItems([])
     }
 
 
 
     const getTotalPrice = () => {
-        return cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
+        return localCartItems.reduce((total, item) => total + item.price * item.quantity, 0)
     }
 
     const getTotalItems = () => {
-        return cartItems.reduce((total, item) => total + item.quantity, 0)
+        return localCartItems.reduce((total, item) => total + item.quantity, 0)
     }
 
     const handleCheckout = () => {
@@ -89,7 +86,7 @@ export default function CartPage({ onNavigate }: CartPageProps) {
         window.open(paymentUrl, '_blank', 'noopener,noreferrer')
     }
 
-    if (cartItems.length === 0) {
+    if (localCartItems.length === 0) {
         return (
             <div className="max-w-7xl mx-auto px-4 py-8">
                 <div className="mb-6">
@@ -145,7 +142,7 @@ export default function CartPage({ onNavigate }: CartPageProps) {
                             {getTotalItems()} item{getTotalItems() !== 1 ? 's' : ''} in your cart
                         </p>
                     </div>
-                    {cartItems.length > 0 && (
+                    {localCartItems.length > 0 && (
                         <button
                             onClick={clearCart}
                             className="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium transition-colors"
@@ -161,7 +158,7 @@ export default function CartPage({ onNavigate }: CartPageProps) {
                 <div className="lg:col-span-2">
                     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
                         <div className="divide-y divide-gray-200 dark:divide-gray-700">
-                            {cartItems.map((item) => (
+                            {localCartItems.map((item) => (
                                 <div key={item.id} className="p-6">
                                     <div className="flex items-start space-x-4">
                                         <img

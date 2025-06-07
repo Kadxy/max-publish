@@ -42,6 +42,7 @@ export default function Home() {
     const [selectedBook, setSelectedBook] = useState<Book | null>(null)
     const [cartItems, setCartItems] = useState<CartItem[]>([])
     const [user, setUser] = useState<User | null>(null)
+    const [allBooks, setAllBooks] = useState<Book[]>(TEXTS.sampleBooks)
 
     // Load cart and user from localStorage on mount
     useEffect(() => {
@@ -75,7 +76,7 @@ export default function Home() {
     }
 
     const handleBookClick = (bookId: string) => {
-        const book = TEXTS.sampleBooks.find(b => b.id === bookId)
+        const book = allBooks.find(b => b.id === bookId)
         if (book) {
             setSelectedBook(book)
             setCurrentSection('book-detail')
@@ -83,27 +84,35 @@ export default function Home() {
     }
 
     const handleAddToCart = (book: Book) => {
+        console.log('Adding to cart:', book.title, book.id)
         setCartItems(items => {
             const existingItem = items.find(item => item.id === book.id)
             if (existingItem) {
-                return items.map(item =>
+                const updatedItems = items.map(item =>
                     item.id === book.id
                         ? { ...item, quantity: item.quantity + 1 }
                         : item
                 )
+                console.log('Updated existing item, new cart items:', updatedItems)
+                return updatedItems
             } else {
                 // Use the translated title for cart storage
                 const translatedTitle = typeof book.title === 'string' ? book.title : book.title.en
-                return [...items, {
+                const newItem = {
                     id: book.id,
                     title: translatedTitle,
                     author: book.author,
                     price: book.price,
                     image: book.image,
                     quantity: 1
-                }]
+                }
+                const updatedItems = [...items, newItem]
+                console.log('Added new item:', newItem)
+                console.log('New cart items:', updatedItems)
+                return updatedItems
             }
         })
+        console.log('Cart updated')
     }
 
     const handleLogin = (userData: User) => {
@@ -116,7 +125,9 @@ export default function Home() {
     }
 
     const getCartItemCount = () => {
-        return cartItems.reduce((total, item) => total + item.quantity, 0)
+        const count = cartItems.reduce((total, item) => total + item.quantity, 0)
+        console.log('Cart item count:', count, 'from items:', cartItems)
+        return count
     }
 
     const renderCurrentPage = () => {
@@ -134,7 +145,7 @@ export default function Home() {
             case 'contact':
                 return <ContactPage />
             case 'cart':
-                return <CartPage onNavigate={handleNavigation} />
+                return <CartPage onNavigate={handleNavigation} cartItems={cartItems} onUpdateCart={setCartItems} />
             case 'login':
                 return <LoginPage onNavigate={handleNavigation} onLogin={handleLogin} />
             case 'profile':
@@ -145,6 +156,7 @@ export default function Home() {
                         bookId={selectedBook.id}
                         onBack={() => handleNavigation('books')}
                         onNavigate={handleNavigation}
+                        onAddToCart={handleAddToCart}
                     />
                 ) : null
             default:
@@ -157,6 +169,7 @@ export default function Home() {
             <Header
                 currentSection={currentSection}
                 onNavigate={handleNavigation}
+                cartItemCount={getCartItemCount()}
             />
 
             <main className="pt-16">
