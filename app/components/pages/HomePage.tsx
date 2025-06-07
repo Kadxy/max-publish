@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ChevronRight, ChevronLeft, BookOpen, Book, Brain, Heart, Zap, Clock, Users, Palette } from 'lucide-react'
-import { useLanguage } from '../../hooks/useLanguage'
+import { useLanguage } from '../../contexts/LanguageContext'
 import { TEXTS } from '../../../lib/constants'
 import BookCard from '../BookCard'
 

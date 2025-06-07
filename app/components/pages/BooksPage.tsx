@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { Filter, Grid, List, ChevronDown } from 'lucide-react'
-import { useLanguage } from '../../hooks/useLanguage'
+import { useLanguage } from '../../contexts/LanguageContext'
 import { TEXTS, fetchBooksFromOpenLibrary } from '../../../lib/constants'
 import BookCard from '../BookCard'
 import { Book } from '../../types'

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Search, Book, ShoppingCart, User, Menu, X, Sun, Moon, Monitor } from 'lucide-react'
-import { useLanguage } from '../hooks/useLanguage'
+import { useLanguage } from '../contexts/LanguageContext'
 import { useTheme } from '../hooks/useTheme'
 import { TEXTS } from '../../lib/constants'
 

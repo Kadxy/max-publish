@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Minus, Plus, Trash2, ShoppingBag, ArrowLeft, Package } from 'lucide-react'
-import { useLanguage } from '../../hooks/useLanguage'
+import { useLanguage } from '../../contexts/LanguageContext'
 import { TEXTS } from '../../../lib/constants'
 
 type CartItem = {

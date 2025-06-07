@@ -1,5 +1,5 @@
 import { BookOpen, Award, Users, Globe, Heart, Shield } from 'lucide-react'
-import { useLanguage } from '../../hooks/useLanguage'
+import { useLanguage } from '../../contexts/LanguageContext'
 import { TEXTS } from '../../../lib/constants'
 
 export default function AboutPage() {

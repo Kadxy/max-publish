@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ArrowLeft, Star, ShoppingCart, Heart, Share2 } from 'lucide-react'
-import { useLanguage } from '../../hooks/useLanguage'
+import { useLanguage } from '../../contexts/LanguageContext'
 import { TEXTS } from '../../../lib/constants'
 import { Book } from '../../types'
 

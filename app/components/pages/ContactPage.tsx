@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Mail, Phone, MapPin, Clock, Send, ChevronDown } from 'lucide-react'
-import { useLanguage } from '../../hooks/useLanguage'
+import { useLanguage } from '../../contexts/LanguageContext'
 import { TEXTS } from '../../../lib/constants'
 
 export default function ContactPage() {

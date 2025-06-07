@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Star, ShoppingCart, Heart } from 'lucide-react'
 import { Book } from '../types'
-import { useLanguage } from '../hooks/useLanguage'
+import { useLanguage } from '../contexts/LanguageContext'
 import { TEXTS } from '../../lib/constants'
 
 type BookCardProps = {

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useTheme } from './hooks/useTheme'
-import { useLanguage } from './hooks/useLanguage'
+import { LanguageProvider } from './contexts/LanguageContext'
 import { TEXTS } from '../lib/constants'
 import { Book } from './types'
 
@@ -35,9 +35,8 @@ type User = {
     avatar: string
 }
 
-export default function Home() {
+function HomeContent() {
     const { theme, changeTheme } = useTheme()
-    const { language, changeLanguage } = useLanguage()
     const [currentSection, setCurrentSection] = useState<string>('home')
     const [selectedBook, setSelectedBook] = useState<Book | null>(null)
     const [cartItems, setCartItems] = useState<CartItem[]>([])
@@ -172,11 +171,19 @@ export default function Home() {
                 cartItemCount={getCartItemCount()}
             />
 
-            <main className="pt-16">
+            <main className="pt-14">
                 {renderCurrentPage()}
             </main>
 
             <Footer onNavigate={handleNavigation} />
         </div>
+    )
+}
+
+export default function Home() {
+    return (
+        <LanguageProvider>
+            <HomeContent />
+        </LanguageProvider>
     )
 } 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Book, Heart, Star, Users, Zap, Sword, Brain, Globe, BookOpen, Clock, Palette, Shield, Gamepad2 } from 'lucide-react'
-import { useLanguage } from '../../hooks/useLanguage'
+import { useLanguage } from '../../contexts/LanguageContext'
 import { TEXTS, Book as BookType, fetchBooksFromOpenLibrary } from '../../../lib/constants'
 import BookCard from '../BookCard'
 
