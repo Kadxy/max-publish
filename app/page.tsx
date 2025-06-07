@@ -171,7 +171,7 @@ function HomeContent() {
                 cartItemCount={getCartItemCount()}
             />
 
-            <main className="pt-14">
+            <main>
                 {renderCurrentPage()}
             </main>
 
