@@ -1,171 +1,202 @@
-# Book Web Template
+# Max Publishing - Modern Bookstore Website
 
-A modern, bilingual (English/Italian) online bookstore template built with
-Next.js 14, TypeScript, and Tailwind CSS. Perfect for creating professional
-book retail websites with dark mode support and responsive design.
+A modern, bilingual (English/Italian) bookstore website built with Next.js 14, TypeScript, and Tailwind CSS.
 
-## Features
+## 🚀 Features
 
-- 🌐 **Bilingual template** (English/Italian) with real-time language switching
-- 🌙 **Dark/Light/System mode** with automatic theme detection
-- 📚 **Professional design** inspired by leading Italian bookstores
-- 🛒 **Complete book catalog** with ratings, reviews, and carousel showcase
-- 👥 **Author profiles section** with bio and publication counts
-- 📱 **Fully responsive** mobile-first interface design
-- ⚡ **Next.js 14** with App Router and TypeScript for type safety
-- 🎨 **Tailwind CSS** utility-first styling system
-- 🚀 **Production ready** for Vercel deployment
-- 📦 **Easy customization** through centralized constants
+- **Bilingual Support**: Full English and Italian language support
+- **Dark/Light Theme**: System-aware theme switching with manual override
+- **Responsive Design**: Mobile-first design that works on all devices
+- **Interactive Navigation**: Smooth navigation between different sections
+- **Book Management**: Browse books, view details, filter by categories
+- **Modern UI**: Clean, professional design with smooth animations
+- **Component-Based Architecture**: Well-organized, reusable components
 
-## Company Information
+## 📁 Project Structure
 
-### Max Publishing SRL
+```
+app/
+├── components/           # Reusable UI components
+│   ├── Header.tsx       # Navigation header with theme/language switching
+│   ├── Footer.tsx       # Site footer with links and company info
+│   ├── BookCard.tsx     # Individual book display component
+│   └── pages/           # Page components
+│       ├── HomePage.tsx      # Landing page with hero, categories, featured books
+│       ├── BooksPage.tsx     # Book listing with filters and search
+│       ├── CategoriesPage.tsx # Category browsing page
+│       ├── BookDetailPage.tsx # Individual book details
+│       ├── AboutPage.tsx     # Company information
+│       └── ContactPage.tsx   # Contact form and information
+├── hooks/               # Custom React hooks
+│   ├── useLanguage.ts   # Language management
+│   └── useTheme.ts      # Theme management
+├── types/               # TypeScript type definitions
+│   └── index.ts         # Core types (Book, Language, etc.)
+├── page.tsx             # Main app component with routing logic
+├── layout.tsx           # Root layout
+└── globals.css          # Global styles
 
-- Address: Via Camillo Benso Cavour 50/D, 20056 Bologna
-- Email: <maxpublishingsrl@pec.it>
-- Registration: MI-2555363
-- VAT: 10750550963
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm or yarn
-
-### Quick Start
-
-1. Clone this template
-
-```bash
-git clone https://github.com/Kadxy/book-web.git
-cd book-web
+lib/
+└── constants.ts         # Text content, book data, and configuration
 ```
 
-1. Install dependencies
+## 🎯 Key Improvements Made
 
-```bash
-npm install
-```
+### 1. **Modular Architecture**
+- Broke down the monolithic 800-line `page.tsx` into focused, reusable components
+- Each page is now a separate component with clear responsibilities
+- Shared components (Header, Footer, BookCard) are reusable across pages
 
-1. Start development server
+### 2. **Enhanced Navigation**
+- All navigation buttons are now functional with proper state management
+- Smooth transitions between different sections (Home, Books, Categories, About, Contact)
+- Book detail pages with back navigation
+- Active section highlighting in navigation
 
-```bash
-npm run dev
-```
+### 3. **Interactive Features**
+- **Book Browsing**: Click any book to view detailed information
+- **Category Navigation**: Browse books by category with visual feedback
+- **Search Functionality**: Search interface (ready for backend integration)
+- **Shopping Cart**: Cart interface (ready for e-commerce integration)
+- **Contact Forms**: Working contact form with validation and feedback
 
-1. Open [http://localhost:3000](http://localhost:3000) to view your bookstore
+### 4. **Improved User Experience**
+- **Theme Switching**: Light/Dark/System theme options with persistence
+- **Language Toggle**: Seamless English/Italian switching
+- **Responsive Design**: Optimized for mobile, tablet, and desktop
+- **Loading States**: Visual feedback for form submissions and interactions
+- **Error Handling**: Graceful fallbacks for missing images and data
 
-### Customization
+### 5. **Developer Experience**
+- **TypeScript**: Full type safety with custom type definitions
+- **Custom Hooks**: Reusable logic for language and theme management
+- **Clean Code**: Well-organized, commented, and maintainable codebase
+- **Performance**: Optimized bundle size and loading times
 
-After installation, customize the template by:
+## 🛠 Available Pages & Features
 
-- Edit `lib/constants.ts` to add your books, company info, and translations
-- Replace images in `public/images/` with your own book covers and branding
-- Modify colors and styling in `tailwind.config.js`
-- Update company information in the footer and about sections
+### 🏠 **Home Page**
+- Hero section with call-to-action buttons
+- Category overview with interactive cards
+- Featured books carousel
+- Newsletter subscription
 
-## Deployment to Vercel
+### 📚 **Books Page**
+- Complete book catalog with grid/list view toggle
+- Advanced filtering by category and price range
+- Sorting options (title, author, price, rating)
+- Search functionality
 
-### Quick Deploy
+### 🏷 **Categories Page**
+- Visual category browser
+- Books grouped by category
+- Quick navigation to full book listings
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=<your-repo-url>)
+### 📖 **Book Detail Page**
+- Full book information with large cover image
+- Add to cart and wishlist functionality
+- Related books suggestions
+- Social sharing options
 
-### Manual Deploy
+### ℹ️ **About Page**
+- Company story and mission
+- Team member profiles
+- Statistics and achievements
+- Company contact information
 
-1. Build the project
+### 📞 **Contact Page**
+- Contact form with validation
+- Company contact details
+- Business hours and location
+- FAQ section
 
-```bash
-npm run build
-```
+## 🌐 Internationalization
 
-1. The `out` folder contains the static files ready for deployment
+The website supports both English and Italian with:
+- Complete UI translation
+- Localized book titles and descriptions
+- Cultural adaptations for Italian market
+- Persistent language preference
 
-1. Deploy to Vercel:
-   - Connect your GitHub repository to Vercel
-   - Vercel will automatically detect it's a Next.js project
-   - Deploy with default settings
+## 🎨 Design System
 
-## Project Structure
+- **Colors**: Blue primary with purple accents
+- **Typography**: Clean, readable fonts with proper hierarchy
+- **Spacing**: Consistent spacing using Tailwind's scale
+- **Components**: Reusable design patterns
+- **Dark Mode**: Comprehensive dark theme support
 
-```text
-book-web/
-├── app/
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-├── lib/
-│   └── constants.ts
-├── public/
-├── next.config.js
-├── tailwind.config.js
-└── package.json
-```
+## 🚀 Getting Started
 
-## Technologies Used
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-- **Next.js 14** - React framework with App Router
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Utility-first CSS framework
-- **Lucide React** - Beautiful icons
-- **Vercel** - Deployment platform
+2. **Run development server**:
+   ```bash
+   npm run dev
+   ```
 
-## Languages & Themes
+3. **Build for production**:
+   ```bash
+   npm run build
+   ```
 
-### Language Support
+4. **Start production server**:
+   ```bash
+   npm start
+   ```
 
-The website supports two languages:
-
-- **English** (EN)
-- **Italian** (IT)
-
-Language switching is available in the header. All text content is stored in
-`lib/constants.ts` for easy management.
-
-### Theme Support
-
-Three theme modes are available:
-
-- **Light mode** - Classic bright interface
-- **Dark mode** - Modern dark interface for better night reading
-- **System mode** - Automatically adapts to device preference
-
-Theme switching is available in the header next to language options. The
-selected theme is saved in localStorage.
-
-## Advanced Customization
+## 🔧 Customization
 
 ### Adding New Books
-
-Edit the `sampleBooks` array in `lib/constants.ts`:
+Edit `lib/constants.ts` and add books to the `sampleBooks` array:
 
 ```typescript
 {
-  id: 5,
-  title: { en: 'Book Title', it: 'Titolo del Libro' },
+  id: 'unique-id',
+  title: { en: 'English Title', it: 'Titolo Italiano' },
   author: 'Author Name',
   price: 19.99,
-  category: 'fiction',
-  cover: '/path/to/cover.jpg',
-  description: { 
-    en: 'English description', 
-    it: 'Descrizione italiana' 
-  }
+  originalPrice: 24.99, // optional
+  image: 'https://example.com/cover.jpg',
+  category: 'Fiction',
+  rating: 4.5,
+  reviews: 1234,
+  description: { en: 'English description', it: 'Descrizione italiana' }
 }
 ```
 
-### Adding New Categories
+### Adding New Languages
+1. Update the `Language` type in `app/types/index.ts`
+2. Add translations to `lib/constants.ts`
+3. Update the language selector in `Header.tsx`
 
-Add new category translations in `lib/constants.ts` under `categories` section.
+### Customizing Themes
+Modify the theme logic in `app/hooks/useTheme.ts` and update CSS classes in components.
 
-### Styling
+## 📱 Responsive Breakpoints
 
-The project uses Tailwind CSS. You can customize the design by:
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px  
+- **Desktop**: > 1024px
 
-- Editing `tailwind.config.js` for theme customization
-- Modifying components in `app/page.tsx`
-- Adding custom CSS in `app/globals.css`
+## 🔮 Future Enhancements
 
-## License
+- Backend integration for real book data
+- User authentication and profiles
+- Shopping cart and checkout process
+- Book reviews and ratings system
+- Advanced search with filters
+- Wishlist management
+- Order tracking
+- Admin panel for content management
 
-© 2024 Max Publishing SRL. All rights reserved.
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.

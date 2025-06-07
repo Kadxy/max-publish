@@ -1,3 +1,56 @@
+// Types
+export type LocalizedText = {
+  en: string
+  it: string
+}
+
+export type Language = 'en' | 'it'
+export type Theme = 'light' | 'dark' | 'system'
+
+export type Book = {
+  id: string
+  title: LocalizedText | string
+  author: string
+  price: number
+  originalPrice?: number
+  image: string
+  category: string
+  rating: number
+  reviews: number
+  description: LocalizedText | string
+  isNew?: boolean
+  isBestseller?: boolean
+  tags?: string[]
+  publishDate?: string
+}
+
+// OpenLibrary API functions
+export const fetchBooksFromOpenLibrary = async (subject: string, limit: number = 20): Promise<Book[]> => {
+  try {
+    const response = await fetch(`https://openlibrary.org/subjects/${subject.toLowerCase().replace(' ', '_')}.json?limit=${limit}`)
+    const data = await response.json()
+    
+    return data.works?.map((work: any, index: number) => ({
+      id: `ol-${work.key.split('/')[2]}`,
+      title: work.title || 'Unknown Title',
+      author: work.authors?.[0]?.name || 'Unknown Author',
+      price: Math.floor(Math.random() * 30) + 10, // Random price between 10-40
+      image: work.cover_id 
+        ? `https://covers.openlibrary.org/b/id/${work.cover_id}-M.jpg`
+        : `https://via.placeholder.com/300x400/e5e7eb/6b7280?text=${encodeURIComponent(work.title || 'Book')}`,
+      category: subject,
+      rating: Math.floor(Math.random() * 20) / 4 + 3, // Random rating between 3.0-4.75
+      reviews: Math.floor(Math.random() * 5000) + 100,
+      description: work.description || `A ${subject.toLowerCase()} book by ${work.authors?.[0]?.name || 'Unknown Author'}.`,
+      isNew: index < 3,
+      isBestseller: Math.random() > 0.7
+    })) || []
+  } catch (error) {
+    console.error('Error fetching books from OpenLibrary:', error)
+    return []
+  }
+}
+
 export const TEXTS = {
   // Navigation
   nav: {
@@ -447,5 +500,163 @@ export const TEXTS = {
       },
       book: 'Gomorra'
     }
-  ]
+  ],
+
+  // Contact page texts
+  contact: {
+    description: {
+      en: "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+      it: "Ci piacerebbe sentirti. Inviaci un messaggio e ti risponderemo il prima possibile."
+    },
+    form: {
+      title: {
+        en: "Send us a Message",
+        it: "Inviaci un Messaggio"
+      },
+      success_title: {
+        en: "Message Sent Successfully!",
+        it: "Messaggio Inviato con Successo!"
+      },
+      success_message: {
+        en: "Thank you for contacting us. We'll get back to you within 24 hours.",
+        it: "Grazie per averci contattato. Ti risponderemo entro 24 ore."
+      },
+      name: {
+        en: "Name",
+        it: "Nome"
+      },
+      name_placeholder: {
+        en: "Your full name",
+        it: "Il tuo nome completo"
+      },
+      email: {
+        en: "Email",
+        it: "Email"
+      },
+      email_placeholder: {
+        en: "your.email@example.com",
+        it: "tua.email@esempio.com"
+      },
+      subject: {
+        en: "Subject",
+        it: "Oggetto"
+      },
+      select_subject: {
+        en: "Select a subject",
+        it: "Seleziona un oggetto"
+      },
+      general_inquiry: {
+        en: "General Inquiry",
+        it: "Richiesta Generale"
+      },
+      order_support: {
+        en: "Order Support",
+        it: "Supporto Ordini"
+      },
+      shipping: {
+        en: "Shipping & Delivery",
+        it: "Spedizione e Consegna"
+      },
+      returns: {
+        en: "Returns & Refunds",
+        it: "Resi e Rimborsi"
+      },
+      technical: {
+        en: "Technical Support",
+        it: "Supporto Tecnico"
+      },
+      partnership: {
+        en: "Partnership Opportunities",
+        it: "Opportunità di Partnership"
+      },
+      other: {
+        en: "Other",
+        it: "Altro"
+      },
+      message: {
+        en: "Message",
+        it: "Messaggio"
+      },
+      message_placeholder: {
+        en: "Please describe your inquiry in detail...",
+        it: "Descrivi la tua richiesta in dettaglio..."
+      },
+      sending: {
+        en: "Sending...",
+        it: "Invio..."
+      },
+      send: {
+        en: "Send Message",
+        it: "Invia Messaggio"
+      }
+    },
+    info: {
+      title: {
+        en: "Get in Touch",
+        it: "Contattaci"
+      },
+      email_title: {
+        en: "Email Us",
+        it: "Inviaci una Email"
+      },
+      email_response: {
+        en: "We typically respond within 24 hours",
+        it: "Generalmente rispondiamo entro 24 ore"
+      },
+      phone_title: {
+        en: "Call Us",
+        it: "Chiamaci"
+      },
+      phone_hours: {
+        en: "Mon-Fri 9:00 AM - 6:00 PM CET",
+        it: "Lun-Ven 9:00 - 18:00 CET"
+      },
+      address_title: {
+        en: "Visit Us",
+        it: "Visitaci"
+      },
+      hours_title: {
+        en: "Business Hours",
+        it: "Orari di Apertura"
+      },
+      hours_weekdays: {
+        en: "Monday - Friday: 9:00 AM - 6:00 PM",
+        it: "Lunedì - Venerdì: 9:00 - 18:00"
+      },
+      hours_weekend: {
+        en: "Saturday: 10:00 AM - 4:00 PM",
+        it: "Sabato: 10:00 - 16:00"
+      }
+    },
+    faq: {
+      title: {
+        en: "Frequently Asked Questions",
+        it: "Domande Frequenti"
+      },
+      q1: {
+        en: "How long does shipping take?",
+        it: "Quanto tempo richiede la spedizione?"
+      },
+      a1: {
+        en: "Standard shipping within Italy takes 2-3 business days. International shipping varies by destination.",
+        it: "La spedizione standard in Italia richiede 2-3 giorni lavorativi. La spedizione internazionale varia a seconda della destinazione."
+      },
+      q2: {
+        en: "Can I return a book?",
+        it: "Posso restituire un libro?"
+      },
+      a2: {
+        en: "Yes, we accept returns within 30 days of purchase in original condition.",
+        it: "Sì, accettiamo resi entro 30 giorni dall'acquisto nelle condizioni originali."
+      },
+      q3: {
+        en: "Do you have a physical store?",
+        it: "Avete un negozio fisico?"
+      },
+      a3: {
+        en: "Yes, you can visit our showroom in Bologna by appointment.",
+        it: "Sì, puoi visitare il nostro showroom a Bologna su appuntamento."
+      }
+    }
+  }
 } 
