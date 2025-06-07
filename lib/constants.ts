@@ -115,8 +115,7 @@ export const TEXTS = {
   // Footer
   footer: {
     company_info: { en: 'About Max Publishing', it: 'Chi è Max Publishing' },
-    company_desc: { en: 'Your trusted partner for quality books and literature since 2019.', it: 'Il vostro partner di fiducia per libri e letteratura di qualità dal 2019.' },
-    quick_links: { en: 'Quick Links', it: 'Link Rapidi' }
+    company_desc: { en: 'Your trusted partner for quality books and literature since 2019.', it: 'Il vostro partner di fiducia per libri e letteratura di qualità dal 2019.' }
   },
   
   // Company Info (based on provided documents)
