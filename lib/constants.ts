@@ -116,14 +116,7 @@ export const TEXTS = {
   footer: {
     company_info: { en: 'About Max Publishing', it: 'Chi è Max Publishing' },
     company_desc: { en: 'Your trusted partner for quality books and literature since 2019.', it: 'Il vostro partner di fiducia per libri e letteratura di qualità dal 2019.' },
-    quick_links: { en: 'Quick Links', it: 'Link Rapidi' },
-    customer_service: { en: 'Customer Service', it: 'Servizio Clienti' },
-    help: { en: 'Help', it: 'Aiuto' },
-    shipping: { en: 'Shipping Info', it: 'Info Spedizioni' },
-    returns: { en: 'Returns', it: 'Resi' },
-    privacy: { en: 'Privacy Policy', it: 'Privacy Policy' },
-    terms: { en: 'Terms of Service', it: 'Termini di Servizio' },
-    follow_us: { en: 'Follow Us', it: 'Seguici' }
+    quick_links: { en: 'Quick Links', it: 'Link Rapidi' }
   },
   
   // Company Info (based on provided documents)
