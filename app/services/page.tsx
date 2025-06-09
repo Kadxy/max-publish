@@ -366,21 +366,6 @@ export default function ServicesPage() {
                             : 'Il nostro team di esperti è pronto ad aiutarti a navigare nel mondo dell\'editoria professionale. Creiamo insieme qualcosa di straordinario.'
                         }
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link
-                            href="/contact"
-                            className="inline-flex items-center px-8 py-4 text-lg font-medium rounded-xl bg-white text-gray-900 hover:bg-gray-100 transition-colors"
-                        >
-                            {TEXTS.common.requestConsultation[language]}
-                            <ArrowRight className="ml-2 h-5 w-5" />
-                        </Link>
-                        <a
-                            href={`mailto:${COMPANY.emails.general}`}
-                            className="inline-flex items-center px-8 py-4 text-lg font-medium rounded-xl border-2 border-white text-white hover:bg-white hover:text-gray-900 transition-colors"
-                        >
-                            {language === 'en' ? 'Call Us Now' : 'Chiamaci Ora'}
-                        </a>
-                    </div>
                 </div>
             </section>
         </div>

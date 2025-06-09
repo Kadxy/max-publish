@@ -43,13 +43,13 @@ export default function Home() {
                 <div className="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-700/25 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"></div>
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
                     <div className="text-center">
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 whitespace-nowrap">
                             {TEXTS.home.hero.title[language]}
                         </h1>
                         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
                             {TEXTS.home.hero.tagline[language]}
                         </p>
-                        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <div className="mt-10 flex items-center justify-center gap-4">
                             <Link
                                 href="/services"
                                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform hover:-translate-y-1 transition-all duration-300 shadow-xl"
@@ -57,12 +57,6 @@ export default function Home() {
                                 {TEXTS.home.hero.cta.exploreServices.text[language]}
                                 <ArrowRight className="ml-3 h-5 w-5" />
                             </Link>
-                            <a
-                                href={`mailto:${COMPANY.emails.general}?subject=${encodeURIComponent(TEXTS.home.hero.cta.requestConsultation.emailSubject[language])}`}
-                                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors shadow-lg"
-                            >
-                                {TEXTS.home.hero.cta.requestConsultation.text[language]}
-                            </a>
                         </div>
                     </div>
                 </div>
