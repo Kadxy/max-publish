@@ -80,7 +80,6 @@ export const COMPANY = {
   emails: {
     general: 'info@maxpublishingsrl.com',
   },
-  phone: '+39 051 1234567' // To be confirmed
 }
 
 // All website texts

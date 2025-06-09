@@ -214,19 +214,6 @@ ${formData.message}
                                             </p>
                                         </div>
                                     </div>
-
-                                    {/* Phone */}
-                                    {COMPANY.phone && (
-                                        <div className="flex items-start space-x-4">
-                                            <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                                                <Phone className="h-5 w-5 text-blue-600 dark:text-blue-400" />
-                                            </div>
-                                            <div>
-                                                <h4 className="font-medium text-gray-900 dark:text-white">{language === 'en' ? 'Phone' : 'Telefono'}</h4>
-                                                <p className="text-gray-700 dark:text-gray-300">{COMPANY.phone}</p>
-                                            </div>
-                                        </div>
-                                    )}
                                 </div>
                             </div>
 

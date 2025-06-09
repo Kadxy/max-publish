@@ -69,12 +69,6 @@ export default function Footer() {
                                     {COMPANY.emails.general}
                                 </a>
                             </div>
-                            {COMPANY.phone && (
-                                <div className="flex items-center space-x-2">
-                                    <MapPin className="h-4 w-4 text-muted-foreground" />
-                                    <span className="text-muted-foreground">{COMPANY.phone}</span>
-                                </div>
-                            )}
                         </div>
                     </div>
                 </div>
