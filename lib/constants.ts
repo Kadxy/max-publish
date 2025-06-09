@@ -112,8 +112,6 @@ export const TEXTS = {
       en: `Copyright ${COMPANY.name} © ${new Date().getFullYear()}. All rights reserved.`,
       it: `Copyright ${COMPANY.name} © ${new Date().getFullYear()}. Tutti i diritti riservati.`
     },
-    privacyPolicy: { en: 'Privacy Policy', it: 'Informativa Privacy' },
-    termsOfService: { en: 'Terms of Service', it: 'Termini di Servizio' },
     companyInfo: { en: 'Company Information', it: 'Informazioni Aziendali' },
     registeredOffice: { en: 'Registered Office', it: 'Sede Legale' },
     vatNumber: { en: 'VAT Number', it: 'Partita IVA' },
@@ -555,38 +553,6 @@ export const TEXTS = {
       operationalOffice: {
         title: { en: 'Operational Office', it: 'Sede Operativa' }
       }
-    }
-  },
-
-  // Privacy Policy
-  privacy: {
-    metaTitle: {
-      en: 'Privacy Policy | MAX PUBLISHING SRL',
-      it: 'Informativa Privacy | MAX PUBLISHING SRL'
-    },
-    title: {
-      en: 'Privacy Policy',
-      it: 'Informativa Privacy'
-    },
-    content: {
-      en: 'This privacy policy will be updated with complete legal content. For now, MAX PUBLISHING SRL is committed to protecting your privacy and handling your data in accordance with applicable laws.',
-      it: 'Questa informativa sulla privacy sarà aggiornata con contenuti legali completi. Per ora, MAX PUBLISHING SRL si impegna a proteggere la vostra privacy e a gestire i vostri dati in conformità con le leggi applicabili.'
-    }
-  },
-
-  // Terms of Service
-  terms: {
-    metaTitle: {
-      en: 'Terms of Service | MAX PUBLISHING SRL',
-      it: 'Termini di Servizio | MAX PUBLISHING SRL'
-    },
-    title: {
-      en: 'Terms of Service',
-      it: 'Termini di Servizio'
-    },
-    content: {
-      en: 'These terms of service will be updated with complete legal content. By using this website, you agree to be bound by these terms.',
-      it: 'Questi termini di servizio saranno aggiornati con contenuti legali completi. Utilizzando questo sito web, accettate di essere vincolati da questi termini.'
     }
   },
 

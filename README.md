@@ -74,8 +74,6 @@ Open [http://localhost:3000](http://localhost:3000) to view the website.
 │   ├── about/          # About page
 │   ├── contact/        # Contact page
 │   ├── services/       # Services overview
-│   ├── privacy/        # Privacy policy
-│   ├── terms/          # Terms of service
 │   ├── components/     # Reusable components
 │   ├── contexts/       # React contexts
 │   └── layout.tsx      # Root layout

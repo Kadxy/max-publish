@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useLanguage } from '../contexts/LanguageContext'
 import { TEXTS, COMPANY } from '@/lib/constants'
-import { Mail, MapPin, Building2, FileText, Shield } from 'lucide-react'
+import { Mail, MapPin, Building2, FileText } from 'lucide-react'
 
 export default function Footer() {
     const { language } = useLanguage()
@@ -91,19 +91,9 @@ export default function Footer() {
                         <p className="text-sm text-muted-foreground text-center md:text-left">
                             {TEXTS.footer.copyright[language]}
                         </p>
-                        <div className="flex items-center space-x-6">
-                            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center space-x-1">
-                                <Shield className="h-3 w-3" />
-                                <span>{TEXTS.footer.privacyPolicy[language]}</span>
-                            </Link>
-                            <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center space-x-1">
-                                <FileText className="h-3 w-3" />
-                                <span>{TEXTS.footer.termsOfService[language]}</span>
-                            </Link>
-                        </div>
                     </div>
                 </div>
             </div>
         </footer>
     )
-} 
+}
