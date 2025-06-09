@@ -78,7 +78,7 @@ export const COMPANY = {
     it: '29 Marzo 2019'
   },
   emails: {
-    general: 'info@maxpublishingsrl.com',
+    general: 'fanyuchengcc@gmail.com',
   },
 }
 
