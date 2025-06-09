@@ -375,7 +375,7 @@ export default function ServicesPage() {
                             <ArrowRight className="ml-2 h-5 w-5" />
                         </Link>
                         <a
-                            href={`tel:${COMPANY.phone}`}
+                            href={`mailto:${COMPANY.emails.general}`}
                             className="inline-flex items-center px-8 py-4 text-lg font-medium rounded-xl border-2 border-white text-white hover:bg-white hover:text-gray-900 transition-colors"
                         >
                             {language === 'en' ? 'Call Us Now' : 'Chiamaci Ora'}
