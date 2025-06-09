@@ -111,10 +111,8 @@ This website represents MAX PUBLISHING SRL, an Italian limited liability company
 
 ## Contact
 
-For business inquiries:
-- General: info@maxpublishingsrl.com
-- Quotes: quotes@maxpublishingsrl.com
-- PEC: maxpublishingsrl@pec.it
+For all business inquiries, please contact us at:
+- Email: info@maxpublishingsrl.com
 
 ---
 

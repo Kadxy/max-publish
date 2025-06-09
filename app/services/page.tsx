@@ -339,7 +339,7 @@ export default function ServicesPage() {
                             {/* CTA */}
                             <div className="text-center">
                                 <a
-                                    href={`mailto:${COMPANY.emails.quotes}?subject=${encodeURIComponent(service.cta.emailSubject[language])}`}
+                                    href={`mailto:${COMPANY.emails.general}?subject=${encodeURIComponent(service.cta.emailSubject[language])}`}
                                     className={`inline-flex items-center px-8 py-4 text-lg font-medium rounded-xl text-white bg-gradient-to-r ${service.gradient} hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200`}
                                 >
                                     {service.cta.text[language]}

@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useLanguage } from './contexts/LanguageContext'
 import { TEXTS, COMPANY } from '@/lib/constants'
-import { BookOpen, Users, Globe, TrendingUp, Award, Briefcase, ChevronRight, FileText, Package, Key } from 'lucide-react'
+import { BookOpen, Users, Globe, TrendingUp, Award, Briefcase, ChevronRight, FileText, Package, Key, ArrowRight } from 'lucide-react'
 
 export default function Home() {
     const { language } = useLanguage()
@@ -49,17 +49,17 @@ export default function Home() {
                         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
                             {TEXTS.home.hero.tagline[language]}
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
                                 href="/services"
-                                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+                                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform hover:-translate-y-1 transition-all duration-300 shadow-xl"
                             >
                                 {TEXTS.home.hero.cta.exploreServices.text[language]}
-                                <ChevronRight className="ml-2 h-5 w-5" />
+                                <ArrowRight className="ml-3 h-5 w-5" />
                             </Link>
                             <a
-                                href={`mailto:${COMPANY.emails.quotes}?subject=${encodeURIComponent(TEXTS.home.hero.cta.requestConsultation.emailSubject[language])}`}
-                                className="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+                                href={`mailto:${COMPANY.emails.general}?subject=${encodeURIComponent(TEXTS.home.hero.cta.requestConsultation.emailSubject[language])}`}
+                                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors shadow-lg"
                             >
                                 {TEXTS.home.hero.cta.requestConsultation.text[language]}
                             </a>

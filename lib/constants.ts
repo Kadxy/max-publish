@@ -77,10 +77,8 @@ export const COMPANY = {
     en: 'March 29, 2019',
     it: '29 Marzo 2019'
   },
-  pecEmail: 'maxpublishingsrl@pec.it',
   emails: {
     general: 'info@maxpublishingsrl.com',
-    quotes: 'quotes@maxpublishingsrl.com'
   },
   phone: '+39 051 1234567' // To be confirmed
 }
@@ -537,15 +535,7 @@ export const TEXTS = {
       },
       generalEmail: {
         title: { en: 'General Inquiries', it: 'Richieste Generali' },
-        description: { en: 'For general information and inquiries', it: 'Per informazioni e richieste generali' }
-      },
-      quotesEmail: {
-        title: { en: 'Request a Quote', it: 'Richiedi un Preventivo' },
-        description: { en: 'For pricing and service quotes', it: 'Per prezzi e preventivi sui servizi' }
-      },
-      pecEmail: {
-        title: { en: 'Certified Email (PEC)', it: 'Posta Certificata (PEC)' },
-        description: { en: 'For official communications', it: 'Per comunicazioni ufficiali' }
+        description: { en: 'For all inquiries and information', it: 'Per informazioni e richieste di carattere generale' }
       },
       registeredOffice: {
         title: { en: 'Registered Office', it: 'Sede Legale' }
