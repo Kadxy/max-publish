@@ -51,82 +51,75 @@ export const fetchBooksFromOpenLibrary = async (subject: string, limit: number =
   }
 }
 
+// Company Information
+export const COMPANY = {
+  name: 'MAX PUBLISHING SRL',
+  legalForm: {
+    en: 'Limited Liability Company',
+    it: 'Società a responsabilità limitata (SRL)'
+  },
+  registeredOffice: {
+    en: 'GREZZAGO (MI) VIA CAVOUR 50/D CAP 20056, Italy',
+    it: 'GREZZAGO (MI) VIA CAVOUR 50/D CAP 20056, Italia'
+  },
+  operationalOffice: {
+    en: 'VIA CAMILLO BENSO CAVOUR 50/D, 20056, Bologna, Italy',
+    it: 'VIA CAMILLO BENSO CAVOUR 50/D, 20056, Bologna, Italia'
+  },
+  vatNumber: '10750550963',
+  fiscalCode: '10750550963',
+  reaNumber: 'MI - 2555363',
+  shareCapital: {
+    en: '€10,000.00',
+    it: '€10.000,00'
+  },
+  foundedDate: {
+    en: 'March 29, 2019',
+    it: '29 Marzo 2019'
+  },
+  pecEmail: 'maxpublishingsrl@pec.it',
+  emails: {
+    general: 'info@maxpublishingsrl.com',
+    quotes: 'quotes@maxpublishingsrl.com'
+  },
+  phone: '+39 051 1234567' // To be confirmed
+}
+
+// All website texts
 export const TEXTS = {
+  // Common UI texts
+  common: {
+    learnMore: { en: 'Learn More', it: 'Scopri di più' },
+    viewDetails: { en: 'View Details', it: 'Vedi Dettagli' },
+    submit: { en: 'Submit', it: 'Invia' },
+    getQuote: { en: 'Get a Quote', it: 'Richiedi un Preventivo' },
+    requestConsultation: { en: 'Request a Consultation', it: 'Richiedi una Consulenza' }
+  },
+
   // Navigation
   nav: {
     home: { en: 'Home', it: 'Home' },
-    books: { en: 'Books', it: 'Libri' },
-    categories: { en: 'Categories', it: 'Categorie' },
-    bestsellers: { en: 'Bestsellers', it: 'Bestseller' },
-    about: { en: 'About', it: 'Chi Siamo' },
-    contact: { en: 'Contact', it: 'Contatti' },
-    search_placeholder: { en: 'Search books...', it: 'Cerca libri...' }
-  },
-  
-  // Hero Section
-  hero: {
-    title: { en: 'Discover Your Next Great Read', it: 'Scopri la Tua Prossima Grande Lettura' },
-    subtitle: { en: 'Explore thousands of books across all genres. From bestsellers to hidden gems.', it: 'Esplora migliaia di libri di tutti i generi. Dai bestseller ai gioielli nascosti.' },
-    cta_browse: { en: 'Browse Books', it: 'Sfoglia Libri' },
-    cta_bestsellers: { en: 'View Bestsellers', it: 'Vedi Bestseller' }
-  },
-  
-  // Categories
-  categories: {
-    title: { en: 'Popular Categories', it: 'Categorie Popolari' },
-    fiction: { en: 'Fiction', it: 'Narrativa' },
-    non_fiction: { en: 'Non-Fiction', it: 'Saggistica' },
-    mystery: { en: 'Mystery & Thriller', it: 'Giallo e Thriller' },
-    romance: { en: 'Romance', it: 'Romanzi Rosa' },
-    science: { en: 'Science & Technology', it: 'Scienza e Tecnologia' },
-    history: { en: 'History', it: 'Storia' },
-    children: { en: 'Children\'s Books', it: 'Libri per Bambini' },
-    poetry: { en: 'Poetry', it: 'Poesia' }
-  },
-  
-  // Featured Books
-  featured: {
-    title: { en: 'Featured Books', it: 'Libri in Evidenza' },
-    bestsellers_title: { en: 'Current Bestsellers', it: 'Bestseller Attuali' },
-    new_releases_title: { en: 'New Releases', it: 'Nuove Uscite' },
-    view_all: { en: 'View All Books', it: 'Vedi Tutti i Libri' }
+    aboutUs: { en: 'About Us', it: 'Chi Siamo' },
+    services: { en: 'Services', it: 'Servizi' },
+    portfolio: { en: 'Portfolio', it: 'Portfolio' },
+    contactUs: { en: 'Contact Us', it: 'Contattaci' },
+    language: { en: 'Language', it: 'Lingua' }
   },
 
-  // New Arrivals
-  newArrivals: {
-    title: { en: 'New Arrivals', it: 'Nuovi Arrivi' },
-    subtitle: { en: 'Fresh books just added to our collection', it: 'Libri freschi appena aggiunti alla nostra collezione' },
-    view_all: { en: 'View All New Books', it: 'Vedi Tutti i Nuovi Libri' },
-    just_arrived: { en: 'Just Arrived', it: 'Appena Arrivato' },
-    pre_order: { en: 'Pre-order', it: 'Pre-ordina' }
-  },
-
-  // Newsletter
-  newsletter: {
-    title: { en: 'Stay Updated', it: 'Rimani Aggiornato' },
-    subtitle: { en: 'Subscribe to our newsletter and get the latest book recommendations, exclusive offers, and literary news delivered to your inbox.', it: 'Iscriviti alla nostra newsletter e ricevi le ultime raccomandazioni sui libri, offerte esclusive e notizie letterarie direttamente nella tua casella di posta.' },
-    email_placeholder: { en: 'Enter your email address', it: 'Inserisci il tuo indirizzo email' },
-    subscribe_button: { en: 'Subscribe', it: 'Iscriviti' },
-    subscribing: { en: 'Subscribing...', it: 'Iscrizione in corso...' },
-    success_title: { en: 'Successfully Subscribed!', it: 'Iscrizione Completata!' },
-    success_message: { en: 'Thank you for subscribing to our newsletter. You\'ll receive our latest updates soon.', it: 'Grazie per esserti iscritto alla nostra newsletter. Riceverai presto i nostri ultimi aggiornamenti.' }
-  },
-  
   // Footer
   footer: {
-    company_info: { en: 'About Max Publishing', it: 'Chi è Max Publishing' },
-    company_desc: { en: 'Your trusted partner for quality books and literature since 2019.', it: 'Il vostro partner di fiducia per libri e letteratura di qualità dal 2019.' }
+    copyright: {
+      en: `Copyright ${COMPANY.name} © ${new Date().getFullYear()}. All rights reserved.`,
+      it: `Copyright ${COMPANY.name} © ${new Date().getFullYear()}. Tutti i diritti riservati.`
+    },
+    privacyPolicy: { en: 'Privacy Policy', it: 'Informativa Privacy' },
+    termsOfService: { en: 'Terms of Service', it: 'Termini di Servizio' },
+    companyInfo: { en: 'Company Information', it: 'Informazioni Aziendali' },
+    registeredOffice: { en: 'Registered Office', it: 'Sede Legale' },
+    vatNumber: { en: 'VAT Number', it: 'Partita IVA' },
+    reaNumber: { en: 'REA Number', it: 'Numero REA' }
   },
-  
-  // Company Info (based on provided documents)
-  company: {
-    name: 'Max Publishing SRL',
-    address: 'Via Camillo Benso Cavour 50/D, 20056 Bologna',
-    email: 'maxpublishingsrl@pec.it',
-    registration: 'MI-2555363',
-    vat: '10750550963'
-  },
-  
+
   // Theme
   theme: {
     toggle: { en: 'Theme', it: 'Tema' },
@@ -135,541 +128,487 @@ export const TEXTS = {
     system: { en: 'System', it: 'Sistema' }
   },
 
-
-
-  // Reviews Section
-  reviews: {
-    title: { en: 'What Our Readers Say', it: 'Cosa Dicono i Nostri Lettori' },
-    subtitle: { en: 'Trusted by thousands of book lovers', it: 'Di fiducia per migliaia di amanti dei libri' }
+  // Home Page
+  home: {
+    metaTitle: {
+      en: 'MAX PUBLISHING SRL | Strategic Publishing Solutions',
+      it: 'MAX PUBLISHING SRL | Soluzioni Editoriali Strategiche'
+    },
+    hero: {
+      title: {
+        en: 'Your Strategic Partner in Publishing Solutions',
+        it: 'Il Tuo Partner Strategico nelle Soluzioni Editoriali'
+      },
+      tagline: {
+        en: 'MAX PUBLISHING SRL: Delivering specialized publishing services, bulk fulfillment, and rights management for businesses and institutions.',
+        it: 'MAX PUBLISHING SRL: Forniamo servizi editoriali specializzati, vendite all\'ingrosso e gestione dei diritti per aziende e istituzioni.'
+      },
+      cta: {
+        exploreServices: {
+          text: { en: 'Explore Our Services', it: 'Esplora i Nostri Servizi' }
+        },
+        requestConsultation: {
+          text: { en: 'Request a Consultation', it: 'Richiedi una Consulenza' },
+          emailSubject: {
+            en: 'Consultation Request from Website',
+            it: 'Richiesta di Consulenza dal Sito Web'
+          }
+        }
+      }
+    },
+    whyChooseUs: {
+      title: {
+        en: 'Why Choose MAX PUBLISHING SRL',
+        it: 'Perché Scegliere MAX PUBLISHING SRL'
+      },
+      points: [
+        {
+          en: 'Proven B2B Expertise: Over 5 years of specialized publishing solutions for businesses',
+          it: 'Esperienza B2B Comprovata: Oltre 5 anni di soluzioni editoriali specializzate per le aziende'
+        },
+        {
+          en: 'Tailored Solutions: Customized services to meet your specific publishing needs',
+          it: 'Soluzioni Su Misura: Servizi personalizzati per soddisfare le vostre specifiche esigenze editoriali'
+        },
+        {
+          en: 'Quality Commitment: Excellence in every project, from concept to delivery',
+          it: 'Impegno per la Qualità: Eccellenza in ogni progetto, dal concept alla consegna'
+        },
+        {
+          en: 'Reliable Partnership: Trusted by leading businesses and institutions',
+          it: 'Partnership Affidabile: Di fiducia per aziende e istituzioni leader'
+        }
+      ]
+    }
   },
 
-  // Common UI texts
-  ui: {
-    add_to_cart: { en: 'Add to cart', it: 'Aggiungi al carrello' },
-    added: { en: 'Added!', it: 'Aggiunto!' },
-    bestseller: { en: 'Bestseller', it: 'Bestseller' },
-    new: { en: 'New', it: 'Nuovo' },
-    by_author: { en: 'by', it: 'di' }
+  // About Page
+  about: {
+    metaTitle: {
+      en: 'About MAX PUBLISHING SRL',
+      it: 'Chi Siamo - MAX PUBLISHING SRL'
+    },
+    headerTitle: {
+      en: 'About Us',
+      it: 'Chi Siamo'
+    },
+    mission: {
+      title: { en: 'Our Mission', it: 'La Nostra Missione' },
+      content: {
+        en: 'To provide innovative and tailored publishing solutions that empower businesses and institutions to communicate effectively with their audiences through high-quality printed and digital content.',
+        it: 'Fornire soluzioni editoriali innovative e su misura che consentano ad aziende e istituzioni di comunicare efficacemente con il loro pubblico attraverso contenuti stampati e digitali di alta qualità.'
+      }
+    },
+    vision: {
+      title: { en: 'Our Vision', it: 'La Nostra Visione' },
+      content: {
+        en: 'To be the leading B2B publishing partner in Europe, recognized for our commitment to quality, innovation, and exceptional service in the publishing industry.',
+        it: 'Essere il partner editoriale B2B leader in Europa, riconosciuti per il nostro impegno verso la qualità, l\'innovazione e il servizio eccezionale nel settore editoriale.'
+      }
+    },
+    profile: {
+      title: { en: 'Company Profile', it: 'Profilo Aziendale' },
+      content: {
+        en: `Founded in ${COMPANY.foundedDate.en}, MAX PUBLISHING SRL has established itself as a reliable partner for businesses seeking professional publishing solutions. Based in Bologna, Italy, we combine traditional publishing expertise with modern digital capabilities to deliver comprehensive services that meet the evolving needs of our B2B clients.`,
+        it: `Fondata il ${COMPANY.foundedDate.it}, MAX PUBLISHING SRL si è affermata come partner affidabile per le aziende che cercano soluzioni editoriali professionali. Con sede a Bologna, Italia, combiniamo l\'esperienza editoriale tradizionale con le moderne capacità digitali per fornire servizi completi che soddisfano le esigenze in evoluzione dei nostri clienti B2B.`
+      }
+    },
+    b2bExpertise: {
+      title: { en: 'B2B Publishing Expertise', it: 'Esperienza nell\'Editoria B2B' },
+      content: {
+        en: 'We specialize in serving corporate clients, educational institutions, and government organizations with customized publishing solutions. Our expertise spans from technical manuals and corporate publications to educational materials and bulk book orders, always maintaining the highest standards of quality and professionalism.',
+        it: 'Siamo specializzati nel servire clienti aziendali, istituzioni educative e organizzazioni governative con soluzioni editoriali personalizzate. La nostra esperienza spazia dai manuali tecnici e pubblicazioni aziendali ai materiali didattici e ordini di libri all\'ingrosso, mantenendo sempre i più alti standard di qualità e professionalità.'
+      }
+    }
   },
 
-  // Books data with real books from OpenLibrary
-  sampleBooks: [
-    {
-      id: '1',
-      title: {
-        en: 'The Seven Husbands of Evelyn Hugo',
-        it: 'I Sette Mariti di Evelyn Hugo'
+  // Services
+  services: {
+    main: {
+      metaTitle: {
+        en: 'Our B2B Publishing Services | MAX PUBLISHING SRL',
+        it: 'I Nostri Servizi Editoriali B2B | MAX PUBLISHING SRL'
       },
-      author: 'Taylor Jenkins Reid',
-      price: 16.90,
-      originalPrice: 18.50,
-      image: 'https://covers.openlibrary.org/b/id/8354226-M.jpg',
-      category: 'Romance',
-      rating: 5,
-      reviews: 2340,
-      description: {
-        en: 'A captivating novel about a reclusive Hollywood icon who finally decides to tell her story to an unknown journalist.',
-        it: 'Un romanzo avvincente su un\'icona reclusa di Hollywood che finalmente decide di raccontare la sua storia a una giornalista sconosciuta.'
+      headerTitle: {
+        en: 'Our Services',
+        it: 'I Nostri Servizi'
+      },
+      introText: {
+        en: 'MAX PUBLISHING SRL offers a comprehensive suite of B2B publishing services designed to meet the diverse needs of businesses, institutions, and organizations. From concept to distribution, we provide end-to-end solutions that ensure your publishing projects succeed.',
+        it: 'MAX PUBLISHING SRL offre una suite completa di servizi editoriali B2B progettati per soddisfare le diverse esigenze di aziende, istituzioni e organizzazioni. Dal concept alla distribuzione, forniamo soluzioni end-to-end che garantiscono il successo dei vostri progetti editoriali.'
       }
     },
-    {
-      id: '2',
-      title: {
-        en: 'Where the Crawdads Sing',
-        it: 'Il Canto dei Gamberi'
+    publishing: {
+      title: { en: 'Publishing Services', it: 'Servizi Editoriali' },
+      titleShort: { en: 'Publishing Services', it: 'Servizi Editoriali' },
+      descriptionShort: {
+        en: 'From manuscript to market, we provide end-to-end editorial and production services.',
+        it: 'Dal manoscritto al mercato, forniamo servizi editoriali e di produzione end-to-end.'
       },
-      author: 'Delia Owens',
-      price: 18.50,
-      originalPrice: 20.00,
-      image: 'https://covers.openlibrary.org/b/id/8362947-M.jpg',
-      category: 'Mystery',
-      rating: 5,
-      reviews: 1820,
-      description: {
-        en: 'A mystery and coming-of-age story set in the marshes of North Carolina, where nature is both sanctuary and threat.',
-        it: 'Un mistero e una storia di formazione ambientata nelle paludi del North Carolina, dove la natura è sia santuario che minaccia.'
+      metaTitle: {
+        en: 'Publishing Services | MAX PUBLISHING SRL',
+        it: 'Servizi Editoriali | MAX PUBLISHING SRL'
+      },
+      introText: {
+        en: 'MAX PUBLISHING SRL offers comprehensive publishing solutions tailored to meet the unique needs of businesses and organizations. Our expert team guides you through every stage of the publishing process, ensuring exceptional results that align with your goals.',
+        it: 'MAX PUBLISHING SRL offre soluzioni editoriali complete su misura per soddisfare le esigenze uniche di aziende e organizzazioni. Il nostro team di esperti vi guida attraverso ogni fase del processo editoriale, garantendo risultati eccezionali allineati ai vostri obiettivi.'
+      },
+      subServices: {
+        custom: {
+          title: {
+            en: 'Custom Publishing & Bespoke Projects',
+            it: 'Editoria Personalizzata e Progetti Su Misura'
+          },
+          description: {
+            en: 'Tailored publishing solutions for corporate histories, annual reports, branded content, and special projects that reflect your organization\'s unique identity and objectives.',
+            it: 'Soluzioni editoriali su misura per storie aziendali, relazioni annuali, contenuti di marca e progetti speciali che riflettono l\'identità e gli obiettivi unici della vostra organizzazione.'
+          }
+        },
+        editorialProduction: {
+          title: {
+            en: 'Editorial & Production Services',
+            it: 'Servizi Editoriali e di Produzione'
+          },
+          description: {
+            en: 'Complete editorial services including manuscript evaluation, developmental editing, copyediting, proofreading, design, typesetting, and print production management.',
+            it: 'Servizi editoriali completi inclusi valutazione del manoscritto, editing di sviluppo, copyediting, correzione di bozze, design, impaginazione e gestione della produzione di stampa.'
+          }
+        },
+        translation: {
+          title: {
+            en: 'Translation & Localization',
+            it: 'Traduzione e Localizzazione'
+          },
+          description: {
+            en: 'Professional translation services for books, manuals, and corporate publications. We ensure cultural appropriateness and maintain the original tone and intent across languages.',
+            it: 'Servizi di traduzione professionale per libri, manuali e pubblicazioni aziendali. Garantiamo l\'appropriatezza culturale e manteniamo il tono e l\'intento originali attraverso le lingue.'
+          }
+        },
+        contentDev: {
+          title: {
+            en: 'Content Development & Corporate Publishing',
+            it: 'Sviluppo Contenuti ed Editoria Aziendale'
+          },
+          description: {
+            en: 'Strategic content creation for training materials, technical documentation, marketing collateral, and thought leadership publications that enhance your brand authority.',
+            it: 'Creazione strategica di contenuti per materiali di formazione, documentazione tecnica, materiale di marketing e pubblicazioni di thought leadership che migliorano l\'autorità del vostro marchio.'
+          }
+        }
+      },
+      cta: {
+        text: {
+          en: 'Request a Quote for Publishing Services',
+          it: 'Richiedi un Preventivo per Servizi Editoriali'
+        },
+        emailSubject: {
+          en: 'Quote Request: Publishing Services',
+          it: 'Richiesta Preventivo: Servizi Editoriali'
+        }
       }
     },
-    {
-      id: '3',
+    bulkSales: {
       title: {
-        en: 'Later',
-        it: 'Dopo'
+        en: 'Bulk & Corporate Sales',
+        it: 'Vendite all\'Ingrosso e Aziendali'
       },
-      author: 'Stephen King',
-      price: 17.50,
-      originalPrice: 19.00,
-      image: 'https://covers.openlibrary.org/b/id/14654000-M.jpg',
-      category: 'Horror',
-      rating: 4.7,
-      reviews: 3245,
-      description: {
-        en: 'A supernatural thriller about a boy who can see and talk to the dead, but wishes he couldn\'t.',
-        it: 'Un thriller soprannaturale su un ragazzo che può vedere e parlare con i morti, ma vorrebbe non poterlo fare.'
+      titleShort: {
+        en: 'Bulk & Corporate Sales',
+        it: 'Vendite all\'Ingrosso'
+      },
+      descriptionShort: {
+        en: 'Volume purchasing solutions for businesses, educational institutions, and organizations.',
+        it: 'Soluzioni di acquisto in volume per aziende, istituzioni educative e organizzazioni.'
+      },
+      metaTitle: {
+        en: 'Bulk & Corporate Sales | MAX PUBLISHING SRL',
+        it: 'Vendite all\'Ingrosso e Aziendali | MAX PUBLISHING SRL'
+      },
+      introText: {
+        en: 'MAX PUBLISHING SRL provides flexible bulk purchasing options for businesses, educational institutions, libraries, and organizations. Whether you need books for corporate training, educational programs, or promotional purposes, we offer competitive pricing and customized solutions.',
+        it: 'MAX PUBLISHING SRL fornisce opzioni di acquisto all\'ingrosso flessibili per aziende, istituzioni educative, biblioteche e organizzazioni. Che abbiate bisogno di libri per formazione aziendale, programmi educativi o scopi promozionali, offriamo prezzi competitivi e soluzioni personalizzate.'
+      },
+      benefits: {
+        title: {
+          en: 'Key Benefits',
+          it: 'Vantaggi Principali'
+        },
+        points: [
+          {
+            en: 'Competitive Pricing: Significant discounts on volume orders with flexible pricing tiers',
+            it: 'Prezzi Competitivi: Sconti significativi sugli ordini in volume con livelli di prezzo flessibili'
+          },
+          {
+            en: 'Dedicated Account Management: Personal support throughout the ordering and fulfillment process',
+            it: 'Gestione Account Dedicata: Supporto personale durante tutto il processo di ordine e consegna'
+          },
+          {
+            en: 'Customized Solutions: Branded covers, special editions, and custom packaging options',
+            it: 'Soluzioni Personalizzate: Copertine brandizzate, edizioni speciali e opzioni di packaging personalizzato'
+          },
+          {
+            en: 'Efficient Fulfillment: Streamlined logistics for timely delivery to single or multiple locations',
+            it: 'Consegna Efficiente: Logistica ottimizzata per consegne puntuali a singole o multiple destinazioni'
+          }
+        ]
+      },
+      cta: {
+        text: {
+          en: 'Get a Quote for Your Bulk Order',
+          it: 'Richiedi un Preventivo per il Tuo Ordine all\'Ingrosso'
+        },
+        emailSubject: {
+          en: 'Quote Request: Bulk Order',
+          it: 'Richiesta Preventivo: Ordine all\'Ingrosso'
+        }
       }
     },
-    {
-      id: '4',
+    rightsLicensing: {
       title: {
-        en: 'Eva Luna',
-        it: 'Eva Luna'
+        en: 'Rights & Licensing',
+        it: 'Diritti e Licenze'
       },
-      author: 'Isabel Allende',
-      price: 19.50,
-      originalPrice: 21.00,
-      image: 'https://covers.openlibrary.org/b/id/3205240-M.jpg',
-      category: 'Literary Fiction',
-      rating: 5,
-      reviews: 1567,
-      description: {
-        en: 'The story of Eva Luna, a Latin American Scheherazade who weaves tales that blur the boundaries between reality and imagination.',
-        it: 'La storia di Eva Luna, una Sherazade latinoamericana che tesse racconti che sfumano i confini tra realtà e immaginazione.'
-      }
-    },
-    {
-      id: '5',
-      title: {
-        en: 'Hija de la fortuna',
-        it: 'Figlia della Fortuna'
+      titleShort: {
+        en: 'Rights & Licensing',
+        it: 'Diritti e Licenze'
       },
-      author: 'Isabel Allende',
-      price: 22.50,
-      originalPrice: 25.00,
-      image: 'https://covers.openlibrary.org/b/id/10574160-M.jpg',
-      category: 'Historical Fiction',
-      rating: 4.8,
-      reviews: 4521,
-      description: {
-        en: 'An epic tale of love and adventure set during the California Gold Rush, following a young Chilean woman\'s journey.',
-        it: 'Un racconto epico di amore e avventura ambientato durante la corsa all\'oro della California, seguendo il viaggio di una giovane donna cilena.'
-      }
-    },
-    {
-      id: '6',
-      title: {
-        en: 'Sostiene Pereira',
-        it: 'Sostiene Pereira'
+      descriptionShort: {
+        en: 'Comprehensive rights management and licensing services for publishers and content owners.',
+        it: 'Servizi completi di gestione dei diritti e licenze per editori e proprietari di contenuti.'
       },
-      author: 'Antonio Tabucchi',
-      price: 20.00,
-      originalPrice: 22.50,
-      image: 'https://covers.openlibrary.org/b/id/5496834-M.jpg',
-      category: 'Literary Fiction',
-      rating: 4.5,
-      reviews: 2876,
-      description: {
-        en: 'A profound meditation on literature, resistance, and moral awakening set in 1930s Lisbon.',
-        it: 'Una profonda meditazione su letteratura, resistenza e risveglio morale ambientata nella Lisbona degli anni \'30.'
-      }
-    },
-    {
-      id: '7',
-      title: {
-        en: 'Requiem',
-        it: 'Requiem'
+      metaTitle: {
+        en: 'Rights & Licensing Services | MAX PUBLISHING SRL',
+        it: 'Servizi di Diritti e Licenze | MAX PUBLISHING SRL'
       },
-      author: 'Antonio Tabucchi',
-      price: 16.50,
-      originalPrice: 18.00,
-      image: 'https://covers.openlibrary.org/b/id/598181-M.jpg',
-      category: 'Literary Fiction',
-      rating: 5,
-      reviews: 1934,
-      description: {
-        en: 'A dreamlike journey through Lisbon where the narrator searches for a lost friend, blending reality with memory.',
-        it: 'Un viaggio onirico attraverso Lisbona dove il narratore cerca un amico perduto, mescolando realtà e memoria.'
-      }
-    },
-    {
-      id: '8',
-      title: {
-        en: 'Notturno indiano',
-        it: 'Notturno indiano'
+      introText: {
+        en: 'MAX PUBLISHING SRL offers expert rights management and licensing services to help publishers, authors, and content owners maximize the value of their intellectual property. We facilitate rights transactions across multiple formats, languages, and territories.',
+        it: 'MAX PUBLISHING SRL offre servizi esperti di gestione dei diritti e licenze per aiutare editori, autori e proprietari di contenuti a massimizzare il valore della loro proprietà intellettuale. Facilitiamo transazioni di diritti attraverso molteplici formati, lingue e territori.'
       },
-      author: 'Antonio Tabucchi',
-      price: 17.00,
-      originalPrice: 19.50,
-      image: 'https://covers.openlibrary.org/b/id/598081-M.jpg',
-      category: 'Literary Fiction',
-      rating: 4.2,
-      reviews: 1245,
-      description: {
-        en: 'A mysterious quest through India in search of a missing friend, exploring themes of identity and truth.',
-        it: 'Una ricerca misteriosa attraverso l\'India alla ricerca di un amico scomparso, esplorando temi di identità e verità.'
-      }
-    },
-    {
-      id: '9',
-      title: {
-        en: 'The Midnight Library',
-        it: 'La Biblioteca di Mezzanotte'
+      subServices: {
+        translation: {
+          title: {
+            en: 'Translation Rights',
+            it: 'Diritti di Traduzione'
+          },
+          description: {
+            en: 'Management of translation rights for books and content across multiple languages and territories, ensuring maximum reach and revenue potential.',
+            it: 'Gestione dei diritti di traduzione per libri e contenuti attraverso molteplici lingue e territori, garantendo massima portata e potenziale di ricavo.'
+          }
+        },
+        reprint: {
+          title: {
+            en: 'Reprint Permissions',
+            it: 'Permessi di Ristampa'
+          },
+          description: {
+            en: 'Handling reprint and excerpt permissions for academic, educational, and commercial use, with clear licensing terms and efficient processing.',
+            it: 'Gestione dei permessi di ristampa ed estratti per uso accademico, educativo e commerciale, con termini di licenza chiari ed elaborazione efficiente.'
+          }
+        },
+        digital: {
+          title: {
+            en: 'Digital Licensing',
+            it: 'Licenze Digitali'
+          },
+          description: {
+            en: 'E-book, audiobook, and digital content licensing arrangements for various platforms and distribution channels.',
+            it: 'Accordi di licenza per e-book, audiolibri e contenuti digitali per varie piattaforme e canali di distribuzione.'
+          }
+        },
+        territorial: {
+          title: {
+            en: 'Territorial Rights',
+            it: 'Diritti Territoriali'
+          },
+          description: {
+            en: 'Strategic management of geographical rights to optimize market coverage and prevent conflicts between different editions.',
+            it: 'Gestione strategica dei diritti geografici per ottimizzare la copertura del mercato e prevenire conflitti tra diverse edizioni.'
+          }
+        },
+        adaptation: {
+          title: {
+            en: 'Adaptation Rights',
+            it: 'Diritti di Adattamento'
+          },
+          description: {
+            en: 'Licensing for adaptations including film, television, theater, and other media formats, maximizing content value across platforms.',
+            it: 'Licenze per adattamenti inclusi film, televisione, teatro e altri formati multimediali, massimizzando il valore dei contenuti attraverso le piattaforme.'
+          }
+        }
       },
-      author: 'Matt Haig',
-      price: 18.50,
-      originalPrice: 20.00,
-      image: 'https://covers.openlibrary.org/b/id/10313767-M.jpg',
-      category: 'Contemporary Fiction',
-      rating: 5,
-      reviews: 1876,
-      description: {
-        en: 'Between life and death there is a library, and within that library, the shelves go on forever.',
-        it: 'Tra la vita e la morte c\'è una biblioteca, e all\'interno di quella biblioteca, gli scaffali vanno all\'infinito.'
-      }
-    },
-    {
-      id: '10',
-      title: {
-        en: 'Klara and the Sun',
-        it: 'Klara e il Sole'
-      },
-      author: 'Kazuo Ishiguro',
-      price: 16.00,
-      originalPrice: 18.00,
-      image: 'https://covers.openlibrary.org/b/id/10648686-M.jpg',
-      category: 'Literary Fiction',
-      rating: 4.6,
-      reviews: 2134,
-      description: {
-        en: 'From the Nobel Prize-winning author comes a luminous novel about love, loss, and what it means to be human.',
-        it: 'Dal vincitore del Premio Nobel arriva un romanzo luminoso su amore, perdita e cosa significa essere umani.'
-      }
-    },
-    {
-      id: '11',
-      title: {
-        en: 'The Thursday Murder Club',
-        it: 'Il Club degli Omicidi del Giovedì'
-      },
-      author: 'Richard Osman',
-      price: 14.50,
-      originalPrice: 16.00,
-      image: 'https://covers.openlibrary.org/b/id/10201431-M.jpg',
-      category: 'Mystery',
-      rating: 5,
-      reviews: 3256,
-      description: {
-        en: 'Four unlikely friends meet weekly to investigate cold cases, but when a real murder happens, they find themselves in their first live case.',
-        it: 'Quattro improbabili amici si incontrano settimanalmente per indagare su casi irrisolti, ma quando accade un vero omicidio, si ritrovano nel loro primo caso dal vivo.'
-      }
-    }
-  ],
-
-  // New Arrivals - Latest books added to the collection
-  newArrivalBooks: [
-    {
-      id: 'new1',
-      title: {
-        en: 'The Atlas of Dreams and Ghosts',
-        it: 'L\'atlante dei sogni e dei fantasmi'
-      },
-      author: 'Zen Cho',
-      price: 21.50,
-      originalPrice: 24.00,
-      image: 'https://covers.openlibrary.org/b/id/8739161-M.jpg',
-      tags: ['Fantasy', 'Award Winner'],
-      rating: 5,
-      reviews: 234,
-      isNew: true,
-      publishDate: '2024-01',
-      description: {
-        en: 'A magical collection of interconnected stories that span continents and centuries, weaving together Malaysian folklore with contemporary urban fantasy.',
-        it: 'Una collezione magica di storie interconnesse che attraversano continenti e secoli, intrecciando il folklore malese con la fantasy urbana contemporanea.'
-      }
-    },
-    {
-      id: 'new2',
-      title: {
-        en: 'Digital Minimalism',
-        it: 'Minimalismo Digitale'
-      },
-      author: 'Cal Newport',
-      price: 19.90,
-      originalPrice: 22.50,
-      image: 'https://covers.openlibrary.org/b/id/8507540-M.jpg',
-      tags: ['Self-Help'],
-      rating: 5,
-      reviews: 567,
-      isNew: true,
-      publishDate: '2024-01',
-      description: {
-        en: 'A philosophy for technology use that emphasizes quality over quantity, helping you create space for the things that truly matter.',
-        it: 'Una filosofia per l\'uso della tecnologia che enfatizza la qualità sulla quantità, aiutandoti a creare spazio per le cose che contano veramente.'
-      }
-    },
-    {
-      id: 'new3',
-      title: {
-        en: 'The Thursday Murder Club',
-        it: 'Il Club degli Omicidi del Giovedì'
-      },
-      author: 'Richard Osman',
-      price: 18.50,
-      originalPrice: 20.00,
-      image: 'https://covers.openlibrary.org/b/id/10201431-M.jpg',
-      tags: ['Mystery', 'Bestseller'],
-      rating: 4.9,
-      reviews: 1432,
-      isNew: true,
-      publishDate: '2024-01',
-      description: {
-        en: 'Four unlikely friends meet weekly to investigate cold cases, but when a real murder happens on their doorstep, they find themselves in the middle of their first live case.',
-        it: 'Quattro improbabili amici si incontrano settimanalmente per indagare su casi irrisolti, ma quando un vero omicidio accade sulla loro soglia, si ritrovano nel mezzo del loro primo caso dal vivo.'
-      }
-    },
-    {
-      id: 'new4',
-      title: {
-        en: 'Klara and the Sun',
-        it: 'Klara e il Sole'
-      },
-      author: 'Kazuo Ishiguro',
-      price: 23.50,
-      originalPrice: 26.00,
-      image: 'https://covers.openlibrary.org/b/id/10648686-M.jpg',
-      tags: ['Literary Fiction', 'Nobel Prize'],
-      rating: 4.4,
-      reviews: 2156,
-      isNew: true,
-      publishDate: '2024-01',
-      description: {
-        en: 'From the Nobel Prize-winning author comes a luminous novel about love, loss, and what it means to be human, told through the eyes of an artificial friend.',
-        it: 'Dal vincitore del Premio Nobel arriva un romanzo luminoso su amore, perdita e cosa significa essere umani, raccontato attraverso gli occhi di un amico artificiale.'
-      }
-    },
-    {
-      id: 'new5',
-      title: {
-        en: 'The Invisible Bridge',
-        it: 'Il Ponte Invisibile'
-      },
-      author: 'Julie Orringer',
-      price: 20.50,
-      originalPrice: 23.00,
-      image: 'https://covers.openlibrary.org/b/id/6680990-M.jpg',
-      tags: ['Historical Fiction'],
-      rating: 5,
-      reviews: 987,
-      isNew: true,
-      publishDate: '2024-01',
-      description: {
-        en: 'A sweeping historical novel that follows three Hungarian Jewish brothers through the tumultuous years of World War II.',
-        it: 'Un ampio romanzo storico che segue tre fratelli ebrei ungheresi attraverso gli anni tumultuosi della Seconda Guerra Mondiale.'
-      }
-    },
-    {
-      id: 'new6',
-      title: {
-        en: 'The Midnight Library',
-        it: 'La Biblioteca di Mezzanotte'
-      },
-      author: 'Matt Haig',
-      price: 17.90,
-      originalPrice: 19.50,
-      image: 'https://covers.openlibrary.org/b/id/10313767-M.jpg',
-      tags: ['Contemporary', 'Philosophy'],
-      rating: 4.5,
-      reviews: 3245,
-      isNew: true,
-      publishDate: '2024-01',
-      description: {
-        en: 'Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived.',
-        it: 'Tra la vita e la morte c\'è una biblioteca, e all\'interno di quella biblioteca, gli scaffali vanno all\'infinito. Ogni libro offre la possibilità di provare un\'altra vita che avresti potuto vivere.'
+      cta: {
+        text: {
+          en: 'Inquire About Rights & Licensing',
+          it: 'Informazioni su Diritti e Licenze'
+        },
+        emailSubject: {
+          en: 'Inquiry: Rights & Licensing',
+          it: 'Richiesta: Diritti e Licenze'
+        }
       }
     }
-  ],
+  },
 
-  // Real customer reviews
-  customerReviews: [
-    {
-      id: '1',
-      name: 'Marco R.',
-      location: 'Milano',
-      rating: 4.5,
-      text: {
-        en: 'Exceptional service and fast delivery. The books arrived in perfect condition. Elena Ferrante\'s novels are absolutely captivating!',
-        it: 'Servizio eccezionale e consegna veloce. I libri sono arrivati in perfette condizioni. I romanzi di Elena Ferrante sono assolutamente coinvolgenti!'
-      },
-      book: 'L\'amica geniale'
-    },
-    {
-      id: '2',
-      name: 'Giulia M.',
-      location: 'Roma',
-      rating: 5,
-      text: {
-        en: 'Great selection of contemporary Italian literature. I discovered many new authors through their recommendations. Highly recommended!',
-        it: 'Ottima selezione di letteratura italiana contemporanea. Ho scoperto molti nuovi autori grazie ai loro consigli. Altamente raccomandato!'
-      },
-      book: 'La vita intima'
-    },
-    {
-      id: '3',
-      name: 'Stefano L.',
-      location: 'Bologna',
-      rating: 4,
-      text: {
-        en: 'The bilingual edition was perfect for my Italian studies. Excellent quality books and very competitive prices.',
-        it: 'L\'edizione bilingue è stata perfetta per i miei studi di italiano. Libri di ottima qualità e prezzi molto competitivi.'
-      },
-      book: 'Gomorra'
-    }
-  ],
-
-  // Contact page texts
+  // Contact Page
   contact: {
+    metaTitle: {
+      en: 'Contact Us | MAX PUBLISHING SRL',
+      it: 'Contattaci | MAX PUBLISHING SRL'
+    },
+    headerTitle: {
+      en: 'Contact Us',
+      it: 'Contattaci'
+    },
     description: {
-      en: "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
-      it: "Ci piacerebbe sentirti. Inviaci un messaggio e ti risponderemo il prima possibile."
+      en: 'We\'d love to hear from you. Send us a message and we\'ll respond as soon as possible.',
+      it: 'Ci piacerebbe sentirti. Inviaci un messaggio e ti risponderemo il prima possibile.'
     },
     form: {
       title: {
-        en: "Send us a Message",
-        it: "Inviaci un Messaggio"
+        en: 'Send us a Message',
+        it: 'Inviaci un Messaggio'
       },
-      success_title: {
-        en: "Message Sent Successfully!",
-        it: "Messaggio Inviato con Successo!"
+      nameLabel: {
+        en: 'Name',
+        it: 'Nome'
       },
-      success_message: {
-        en: "Thank you for contacting us. We'll get back to you within 24 hours.",
-        it: "Grazie per averci contattato. Ti risponderemo entro 24 ore."
+      namePlaceholder: {
+        en: 'Your full name',
+        it: 'Il tuo nome completo'
       },
-      name: {
-        en: "Name",
-        it: "Nome"
+      emailLabel: {
+        en: 'Email',
+        it: 'Email'
       },
-      name_placeholder: {
-        en: "Your full name",
-        it: "Il tuo nome completo"
+      emailPlaceholder: {
+        en: 'your.email@example.com',
+        it: 'tua.email@esempio.com'
       },
-      email: {
-        en: "Email",
-        it: "Email"
+      companyLabel: {
+        en: 'Company (Optional)',
+        it: 'Azienda (Opzionale)'
       },
-      email_placeholder: {
-        en: "your.email@example.com",
-        it: "tua.email@esempio.com"
+      companyPlaceholder: {
+        en: 'Your company name',
+        it: 'Nome della tua azienda'
       },
-      subject: {
-        en: "Subject",
-        it: "Oggetto"
+      subjectLabel: {
+        en: 'Subject',
+        it: 'Oggetto'
       },
-      select_subject: {
-        en: "Select a subject",
-        it: "Seleziona un oggetto"
+      selectSubject: {
+        en: 'Select a subject',
+        it: 'Seleziona un oggetto'
       },
-      general_inquiry: {
-        en: "General Inquiry",
-        it: "Richiesta Generale"
+      subjects: {
+        general: { en: 'General Inquiry', it: 'Richiesta Generale' },
+        publishing: { en: 'Publishing Services', it: 'Servizi Editoriali' },
+        bulk: { en: 'Bulk Orders', it: 'Ordini all\'Ingrosso' },
+        rights: { en: 'Rights & Licensing', it: 'Diritti e Licenze' },
+        partnership: { en: 'Partnership Opportunities', it: 'Opportunità di Partnership' },
+        other: { en: 'Other', it: 'Altro' }
       },
-      order_support: {
-        en: "Order Support",
-        it: "Supporto Ordini"
+      messageLabel: {
+        en: 'Message',
+        it: 'Messaggio'
       },
-      shipping: {
-        en: "Shipping & Delivery",
-        it: "Spedizione e Consegna"
+      messagePlaceholder: {
+        en: 'Please describe your inquiry in detail...',
+        it: 'Descrivi la tua richiesta in dettaglio...'
       },
-      returns: {
-        en: "Returns & Refunds",
-        it: "Resi e Rimborsi"
+      submitButton: {
+        en: 'Send Message',
+        it: 'Invia Messaggio'
       },
-      technical: {
-        en: "Technical Support",
-        it: "Supporto Tecnico"
+      submitting: {
+        en: 'Sending...',
+        it: 'Invio...'
       },
-      partnership: {
-        en: "Partnership Opportunities",
-        it: "Opportunità di Partnership"
+      emailSubject: {
+        en: 'Website Inquiry',
+        it: 'Richiesta dal Sito Web'
       },
-      other: {
-        en: "Other",
-        it: "Altro"
-      },
-      message: {
-        en: "Message",
-        it: "Messaggio"
-      },
-      message_placeholder: {
-        en: "Please describe your inquiry in detail...",
-        it: "Descrivi la tua richiesta in dettaglio..."
-      },
-      sending: {
-        en: "Sending...",
-        it: "Invio..."
-      },
-      send: {
-        en: "Send Message",
-        it: "Invia Messaggio"
+      mailtoDisclaimer: {
+        en: 'Please note: Clicking \'Submit\' will open your default email application to send your message.',
+        it: 'Nota: Cliccando \'Invia\' si aprirà la tua applicazione email predefinita per inviare il messaggio.'
       }
     },
     info: {
       title: {
-        en: "Get in Touch",
-        it: "Contattaci"
+        en: 'Get in Touch',
+        it: 'Contattaci'
       },
-      email_title: {
-        en: "Email Us",
-        it: "Inviaci una Email"
+      generalEmail: {
+        title: { en: 'General Inquiries', it: 'Richieste Generali' },
+        description: { en: 'For general information and inquiries', it: 'Per informazioni e richieste generali' }
       },
-      email_response: {
-        en: "We typically respond within 24 hours",
-        it: "Generalmente rispondiamo entro 24 ore"
+      quotesEmail: {
+        title: { en: 'Request a Quote', it: 'Richiedi un Preventivo' },
+        description: { en: 'For pricing and service quotes', it: 'Per prezzi e preventivi sui servizi' }
       },
-      phone_title: {
-        en: "Call Us",
-        it: "Chiamaci"
+      pecEmail: {
+        title: { en: 'Certified Email (PEC)', it: 'Posta Certificata (PEC)' },
+        description: { en: 'For official communications', it: 'Per comunicazioni ufficiali' }
       },
-      phone_hours: {
-        en: "Mon-Fri 9:00 AM - 6:00 PM CET",
-        it: "Lun-Ven 9:00 - 18:00 CET"
+      registeredOffice: {
+        title: { en: 'Registered Office', it: 'Sede Legale' }
       },
-      address_title: {
-        en: "Visit Us",
-        it: "Visitaci"
-      },
-      hours_title: {
-        en: "Business Hours",
-        it: "Orari di Apertura"
-      },
-      hours_weekdays: {
-        en: "Monday - Friday: 9:00 AM - 6:00 PM",
-        it: "Lunedì - Venerdì: 9:00 - 18:00"
-      },
-      hours_weekend: {
-        en: "Saturday: 10:00 AM - 4:00 PM",
-        it: "Sabato: 10:00 - 16:00"
+      operationalOffice: {
+        title: { en: 'Operational Office', it: 'Sede Operativa' }
       }
+    }
+  },
+
+  // Privacy Policy
+  privacy: {
+    metaTitle: {
+      en: 'Privacy Policy | MAX PUBLISHING SRL',
+      it: 'Informativa Privacy | MAX PUBLISHING SRL'
     },
-    faq: {
-      title: {
-        en: "Frequently Asked Questions",
-        it: "Domande Frequenti"
-      },
-      q1: {
-        en: "How long does shipping take?",
-        it: "Quanto tempo richiede la spedizione?"
-      },
-      a1: {
-        en: "Standard shipping within Italy takes 2-3 business days. International shipping varies by destination.",
-        it: "La spedizione standard in Italia richiede 2-3 giorni lavorativi. La spedizione internazionale varia a seconda della destinazione."
-      },
-      q2: {
-        en: "Can I return a book?",
-        it: "Posso restituire un libro?"
-      },
-      a2: {
-        en: "Yes, we accept returns within 30 days of purchase in original condition.",
-        it: "Sì, accettiamo resi entro 30 giorni dall'acquisto nelle condizioni originali."
-      },
-      q3: {
-        en: "Do you have a physical store?",
-        it: "Avete un negozio fisico?"
-      },
-      a3: {
-        en: "Yes, you can visit our showroom in Bologna by appointment.",
-        it: "Sì, puoi visitare il nostro showroom a Bologna su appuntamento."
-      }
+    title: {
+      en: 'Privacy Policy',
+      it: 'Informativa Privacy'
+    },
+    content: {
+      en: 'This privacy policy will be updated with complete legal content. For now, MAX PUBLISHING SRL is committed to protecting your privacy and handling your data in accordance with applicable laws.',
+      it: 'Questa informativa sulla privacy sarà aggiornata con contenuti legali completi. Per ora, MAX PUBLISHING SRL si impegna a proteggere la vostra privacy e a gestire i vostri dati in conformità con le leggi applicabili.'
+    }
+  },
+
+  // Terms of Service
+  terms: {
+    metaTitle: {
+      en: 'Terms of Service | MAX PUBLISHING SRL',
+      it: 'Termini di Servizio | MAX PUBLISHING SRL'
+    },
+    title: {
+      en: 'Terms of Service',
+      it: 'Termini di Servizio'
+    },
+    content: {
+      en: 'These terms of service will be updated with complete legal content. By using this website, you agree to be bound by these terms.',
+      it: 'Questi termini di servizio saranno aggiornati con contenuti legali completi. Utilizzando questo sito web, accettate di essere vincolati da questi termini.'
+    }
+  },
+
+  // Portfolio (Optional)
+  portfolio: {
+    metaTitle: {
+      en: 'Our Work | MAX PUBLISHING SRL',
+      it: 'I Nostri Lavori | MAX PUBLISHING SRL'
+    },
+    headerTitle: {
+      en: 'Portfolio',
+      it: 'Portfolio'
+    },
+    introText: {
+      en: 'Explore a selection of our successful publishing projects and partnerships.',
+      it: 'Esplora una selezione dei nostri progetti editoriali di successo e partnership.'
+    },
+    caseStudy: {
+      clientTypeLabel: { en: 'Client Type', it: 'Tipo di Cliente' },
+      challengeLabel: { en: 'Challenge', it: 'Sfida' },
+      solutionLabel: { en: 'Our Solution', it: 'La Nostra Soluzione' },
+      outcomeLabel: { en: 'Results', it: 'Risultati' }
     }
   }
 } 
